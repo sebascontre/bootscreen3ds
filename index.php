@@ -137,8 +137,9 @@
                         <option value="SELECT">SELECT</option>
                     </select> <strong>now</strong> to enter to 
                     <select name="secondTool" class="form-control form-control-sm select-inline">
-                        <option value="rxtools" selected="selected">Rxtools settings</option>
-                        <option value="bootmanager">Boot Manager</option>
+                        <option value="bootmanager" selected="selected">Boot Manager</option>
+                        <option value="rxtools">Rxtools settings</option>
+                        <option value="gateway">Gateway Menu</option>
                         <option value="settings">Settings</option>
                     </select>.
                 </label>
