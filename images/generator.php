@@ -57,6 +57,7 @@ if ($DOUBLE) {
 }
 
 header('Content-Type: image/png');
+header('Content-Disposition: filename="imagedisplay.png"');
 imagepng($base);
 
 ?>
