@@ -52,7 +52,7 @@
     <div class="container">
         <h1>Old School PC BIOS</h1>
         <span>MenuHax Bootscreen Generator</span>
-        <span class="credit">made with &#10084; for <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
+        <span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
 
 
         <form id="settings" class="row">
