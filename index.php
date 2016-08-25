@@ -16,6 +16,7 @@
         .select-inline { width: auto; display: inline-block; }
         .form-control-sm { padding: .1rem .2rem; font-weight: 600; }
         label[for] { font-weight: 600; }
+        img#preview { margin: 0 auto; }
     </style>
     
     <script type="text/javascript">
@@ -27,10 +28,10 @@
                 
                 $form = $("#settings");
                 
-                var url = "images/generator.php?v=3&double=true";
+                var url = "images/generator.php?v=4";
                 
                 url += "&model=" + $('input[name=model]:checked', "#settings").val();
-                url += "&menuhax=" + $('input[name=menuhax]:checked', "#settings").val();
+                url += "&type=" + $('select[name=type] option:selected', "#settings").val();
                 url += "&region=" + $('select[name=region] option:selected', "#settings").val();
                 url += "&sd=" + $('select[name=sd] option:selected', "#settings").val();
                 
@@ -51,7 +52,7 @@
 <body>
     <div class="container">
         <h1>Old School PC BIOS</h1>
-        <span>MenuHax Bootscreen Generator</span>
+        <span>Splash Bootscreen Generator <small>v4.0</small></span>
         <span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
 
 
@@ -102,7 +103,7 @@
             <label for="something">Other Options</label>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="hold" checked> <strong>Hold</strong>
+                    <input type="checkbox" name="hold"> <strong>Hold</strong>
                     <select name="onboot" class="form-control form-control-sm select-inline">
                         <option value="L" selected="selected">L</option>
                         <option value="R">R</option>
@@ -121,7 +122,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="secondLine" checked> <strong>Hold</strong>
+                    <input type="checkbox" name="secondLine"> <strong>Hold</strong>
                     <select name="secondButton" class="form-control form-control-sm select-inline">
                         <option value="L" selected="selected">L</option>
                         <option value="R">R</option>
@@ -145,18 +146,20 @@
                 </label>
             </div>
             
-                <label for="menuhax">MenuHax Version</label><br/>
-                <div class="radio-inline">
-                    <label><input type="radio" name="menuhax" value="2_2" checked> v2.2</label>
-                </div>
-                <div class="radio-inline">
-                    <label><input type="radio" name="menuhax" value="2_1"> v2.1</label>
-                </div>
+            <label for="type">Type</label>
+            <select name="type" class="form-control">
+                <option value="luma_601" selected="selected">Luma3DS v6.0.1</option>
+                <option value="luma_60">Luma3DS v6.0</option>
+                <option value="menuhax_31">Menuhax v3.1</option>
+                <option value="menuhax_30">Menuhax v3.0</option>
+                <option value="menuhax_22">Menuhax v2.2</option>
+                <option value="menuhax_21">Menuhax v2.1</option>
+            </select></fieldset>
         </fieldset>
     </form>
     
-    <br/>
-    <img id="preview" src="images/generator.php?v=4&double=true&model=3ds&region=usa&sd=2g&onboot=L&secondLine=true&secondButton=L&secondTool=rxtools&menuhax=2_2" />
+    <br/><center>
+    <img id="preview" src="images/generator.php?v=4&model=3ds&type=luma_601&region=usa&sd=2g&onboot=false" /></center>
     
 
     <br/><br/>

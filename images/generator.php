@@ -5,12 +5,31 @@ $MODEL = isset($_GET['model']) ? strtolower($_GET['model']) : "3ds";
 $SD = isset($_GET['sd']) ? strtolower($_GET['sd']) : "2g";
 $ONBOOT = isset($_GET['onboot']) ? strtoupper($_GET['onboot']) : false;
 $DOUBLE = isset($_GET['double']) ? strtolower($_GET['double']) : false;
-$MENUHAX = isset($_GET['menuhax']) ? strtolower($_GET['menuhax']) : "usa";
+$TYPE = isset($_GET['type']) ? strtolower($_GET['type']) : "luma_601";
 
-if ($MENUHAX === "2_2") {
-    $base = imagecreatefrompng('base_v2.2.png');
-} else {
-    $base = imagecreatefrompng('base.png');
+switch ($TYPE) {
+    case 'luma_601':
+        $base = imagecreatefrompng('luma_601.png');
+        break;
+    case 'luma_60':
+        $base = imagecreatefrompng('luma_60.png');
+        break;
+    case 'menuhax_31':
+        $base = imagecreatefrompng('base_v3.1.png');
+        $DOUBLE = true;
+        break;
+    case 'menuhax_30':
+        $base = imagecreatefrompng('base_v3.0.png');
+        $DOUBLE = true;
+        break;
+    case 'menuhax_22':
+        $base = imagecreatefrompng('base_v2.2.png');
+        $DOUBLE = true;
+        break;
+    default:
+        $base = imagecreatefrompng('base.png');
+        $DOUBLE = true;
+        break;
 }
 
 
