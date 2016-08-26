@@ -148,7 +148,8 @@
             
             <label for="type">Type</label>
             <select name="type" class="form-control">
-                <option value="luma_601" selected="selected">Luma3DS v6.0.1</option>
+                <option value="luma_61" selected="selected">Luma3DS v6.1</option>
+                <option value="luma_601">Luma3DS v6.0.1</option>
                 <option value="luma_60">Luma3DS v6.0</option>
                 <option value="menuhax_31">Menuhax v3.1</option>
                 <option value="menuhax_30">Menuhax v3.0</option>
@@ -159,7 +160,7 @@
     </form>
     
     <br/><center>
-    <img id="preview" src="images/generator.php?v=4&model=3ds&type=luma_601&region=usa&sd=2g&onboot=false" /></center>
+    <img id="preview" src="images/generator.php?v=4&model=3ds&type=luma_61&region=usa&sd=2g&onboot=false" /></center>
     
 
     <br/><br/>
