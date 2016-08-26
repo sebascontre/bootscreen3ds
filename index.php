@@ -52,7 +52,7 @@
 <body>
     <div class="container">
         <h1>Old School PC BIOS</h1>
-        <span>Splash Bootscreen Generator <small>v4.0</small></span>
+        <span>Splash Bootscreen Generator <small>v4.0.1</small></span>
         <span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
 
 
