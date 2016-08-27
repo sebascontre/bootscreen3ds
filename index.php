@@ -17,6 +17,17 @@
         .form-control-sm { padding: .1rem .2rem; font-weight: 600; }
         label[for] { font-weight: 600; }
         img#preview { margin: 0 auto; }
+        
+        .col-xs-10 .radio { width: 20%; height: 80px; display: inline-block;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+            
+        }
+        
+        .col-xs-10 .radio * { vertical-align: center; }
     </style>
     
     <script type="text/javascript">
@@ -52,51 +63,48 @@
 <body>
     <div class="container">
         <h1>Old School PC BIOS</h1>
-        <span>Splash Bootscreen Generator <small>v4.0.1</small></span>
+        <span>Splash Bootscreen Generator <small>v4.1.1</small></span>
         <span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
 
-
-        <form id="settings" class="row">
-            <fieldset class="form-group col-xs-3">
-                <label for="model">Nintendo 3DS Model</label>
-                
-                <div class="radio">
-                    <label><input type="radio" name="model" value="3ds" checked> Nintendo 3DS</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="model" value="3dsxl"> Nintendo 3DS XL</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="model" value="2ds"> Nintendo 2DS</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="model" value="new3ds"> New Nintendo 3DS</label>
-                </div>
-                <div class="radio">
-                    <label><input type="radio" name="model" value="new3dsxl"> New Nintendo 3DS XL</label>
-                </div>
-            </fieldset>
-            <fieldset class="form-group col-xs-2">
-                <label for="region">Region</label>
-                <select name="region" class="form-control">
-                    <option value="usa" selected="selected">USA</option>
-                    <option value="eur">EUR</option>
-                    <option value="jpn">JPN</option>
-                </select>
-        
-        
-        
-        <br/>
-        <label for="sd">SD Card</label>
-        <select name="sd" class="form-control">
-            <option value="2g" selected="selected">2GB</option>
-            <option value="4g">4GB</option>
-            <option value="8g">8GB</option>
-            <option value="16g">16GB</option>
-            <option value="32g">32GB</option>
-            <option value="64g">64GB</option>
-            <option value="128g">128GB</option>
-        </select></fieldset>
+        <form id="settings">
+            <div class="row">
+                <fieldset class="form-group col-xs-10">
+                    <label for="model">Nintendo 3DS Model</label><br/>
+                    <div class="radio">
+                        <label><input type="radio" name="model" value="3ds" checked> <img class="console" src="images/consoles/3ds.png" /></label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="model" value="3dsxl"> <img class="console" src="images/consoles/3dsxl.png" /></label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="model" value="2ds"> <img class="console" src="images/consoles/2ds.png" /></label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="model" value="new3ds"> <img class="console" src="images/consoles/new3ds.png" /></label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="model" value="new3dsxl"> <img class="console" src="images/consoles/new3dsxl.png" /></label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group col-xs-2">
+                    <label for="region">Region</label>
+                    <select name="region" class="form-control">
+                        <option value="usa" selected="selected">USA</option>
+                        <option value="eur">EUR</option>
+                        <option value="jpn">JPN</option>
+                    </select>
+                    <br/>
+                    <label for="sd">SD Card</label>
+                    <select name="sd" class="form-control">
+                        <option value="2g" selected="selected">2GB</option>
+                        <option value="4g">4GB</option>
+                        <option value="8g">8GB</option>
+                        <option value="16g">16GB</option>
+                        <option value="32g">32GB</option>
+                        <option value="64g">64GB</option>
+                        <option value="128g">128GB</option>
+                    </select></fieldset>
+            </div>
 
 
         <fieldset class="form-group col-xs-7">
@@ -148,9 +156,11 @@
             
             <label for="type">Type</label>
             <select name="type" class="form-control">
-                <option value="luma_61" selected="selected">Luma3DS v6.1</option>
+                <option value="luma_611" selected="selected">Luma3DS v6.1.1</option>
+                <option value="luma_61">Luma3DS v6.1</option>
                 <option value="luma_601">Luma3DS v6.0.1</option>
                 <option value="luma_60">Luma3DS v6.0</option>
+                <option value="luma">Luma3DS</option>
                 <option value="menuhax_31">Menuhax v3.1</option>
                 <option value="menuhax_30">Menuhax v3.0</option>
                 <option value="menuhax_22">Menuhax v2.2</option>

@@ -8,6 +8,9 @@ $DOUBLE = isset($_GET['double']) ? strtolower($_GET['double']) : false;
 $TYPE = isset($_GET['type']) ? strtolower($_GET['type']) : "luma_601";
 
 switch ($TYPE) {
+    case 'luma_611':
+        $base = imagecreatefrompng('luma_611.png');
+        break;
     case 'luma_61':
         $base = imagecreatefrompng('luma_61.png');
         break;
@@ -16,6 +19,9 @@ switch ($TYPE) {
         break;
     case 'luma_60':
         $base = imagecreatefrompng('luma_60.png');
+        break;
+    case 'luma':
+        $base = imagecreatefrompng('luma.png');
         break;
     case 'menuhax_31':
         $base = imagecreatefrompng('base_v3.1.png');
