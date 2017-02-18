@@ -8,6 +8,9 @@ $DOUBLE = isset($_GET['double']) ? strtolower($_GET['double']) : false;
 $TYPE = isset($_GET['type']) ? strtolower($_GET['type']) : "luma_601";
 
 switch ($TYPE) {
+    case 'luma_66':
+        $base = imagecreatefrompng('luma_66.png');
+        break;
     case 'luma_611':
         $base = imagecreatefrompng('luma_611.png');
         break;
