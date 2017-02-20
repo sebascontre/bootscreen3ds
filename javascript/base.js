@@ -18,73 +18,67 @@ function write(x, y, text) {
 }
 
 $("#settings input, #settings select").on('change', function() {
-
-
+	
+	var model = $('input[name=model]:checked', "#settings").val();
+	var region = $('select[name=region] option:selected', "#settings").val();
+	var sd = $('select[name=sd] option:selected', "#settings").val();
 	var type = $('select[name=type] option:selected', "#settings").val();
-	var text = $('select[name=type] option:selected', "#settings").text();
+	var line1 = $('select[name=type] option:selected', "#settings").text();
+	var line2 = ''; var processor = 0;
 
 	switch(type) {
 		case 'luma':
-			var line2 = 'Copyrigth(C) 2016, AuroraWright';
 			$('canvas').attr('width', 400);
+			line2 = 'Copyrigth(C) 2016, AuroraWright';
 			break;
 		case 'menuhax':
-			var line2 = 'Copyrigth(C) 2015, yellow8';
 			$('canvas').attr('width', 800);
+			line2 = 'Copyrigth(C) 2015, yellow8';
 			break;
 	}
 
 	$('canvas').clearCanvas().drawRect({
-	fillStyle: '#000',
-	x: 0, y: 0,
-	width: 400,
-	height: 240
-	
-}).drawImage({
-	source: 'images/symbols.png',
-	x: 0, y: 16,
-	sWidth: 21,
-	sHeight: 29,
-	sx: 0, sy: 16
-	
-}).drawImage({
-	source: 'images/symbols.png',
-	x: 265, y: 16,
-	sWidth: 135,
-	sHeight: 84,
-	sx: 265, sy: 16
-});
+		fillStyle: '#000',
+		x: 0, y: 0,
+		width: 400,
+		height: 240
+	}).drawImage({
+		source: 'images/symbols.png',
+		x: 0, y: 16,
+		sWidth: 21,
+		sHeight: 29,
+		sx: 0, sy: 16
+	}).drawImage({
+		source: 'images/symbols.png',
+		x: 265, y: 16,
+		sWidth: 135,
+		sHeight: 84,
+		sx: 265, sy: 16
+	});
 
-
-	write(24, 16*1, text);
+	write(24, 16*1, line1);
 	write(24, 16*2, line2);
-
-	/* Check Model, Region and SD */
-	var model = $('input[name=model]:checked', "#settings").val();
-	var region = $('select[name=region] option:selected', "#settings").val();
-	var sd = $('select[name=sd] option:selected', "#settings").val();
-	var processor = 0;
 
 	switch(model) {
 		case '3DS':
 			write(0, 16*5, 'Nintendo 3DS CTR-001('+region+')');
-			processor = 2;			
+			processor = 2; sd += ' SD'			
 			break;
 		case '3DSXL':
 			write(0, 16*5, 'Nintendo 3DS XL SPR-001('+region+')');
-			processor = 2;
+			processor = 2; sd += ' SD'
 			break;
 		case '2DS':
 			write(0, 16*5, 'Nintendo 2DS XL FTR-001('+region+')');
-			processor = 2;
+			processor = 2; sd += ' SD'
 			break;
 		case 'n3DS':
 			write(0, 16*5, 'New Nintendo 3DS KTR-001('+region+')');
-			processor = 4;
+			processor = 4; sd += ' microSD'
 			break;
 		case 'n3DSXL':
 			write(0, 16*5, 'New Nintendo 3DS XL RED-001('+region+')');
-			processor = 4;
+			processor = 4; sd += ' microSD'
 			break;
 	}
 
@@ -100,7 +94,7 @@ $("#settings input, #settings select").on('change', function() {
 	}
 
 	write(0, 16*10, 'Detecting Primary Master ... 2G Internal Memory');
-	write(0, 16*11, 'Detecting Primary Slave  ... '+sd+' microSD Card');
+	write(0, 16*11, 'Detecting Primary Slave  ... '+sd+' Card');
 
 	if ($('canvas').width() == 800) {
 		var img = new Image();
