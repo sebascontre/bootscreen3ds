@@ -56,11 +56,11 @@ $("#settings input, #settings select").on('change', function() {
 	switch(type) {
 		case 'luma':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyrigth(C) 2016, AuroraWright';
+			line2 = 'Copyright(C) 2016, AuroraWright';
 			break;
 		case 'menuhax':
 			$topscreen.attr('width', 800);
-			line2 = 'Copyrigth(C) 2015, yellow8';
+			line2 = 'Copyright(C) 2015, yellow8';
 			break;
 	}
 
