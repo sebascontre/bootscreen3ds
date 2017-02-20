@@ -25,6 +25,11 @@ function write(x, y, text, color = 'gray') {
 		write(x+8, y, text, color);
 }
 
+$('canvas').drawImage({
+	source: 'images/symbols.png',
+	x: 0, y: 0,
+});
+
 $("#settings input, #settings select").on('change', function() {
 	var $topscreen = $('#topscreen');
 	
