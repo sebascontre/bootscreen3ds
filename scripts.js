@@ -13,7 +13,7 @@ function write(x, y, text, color = 'gray') {
 
 	$('canvas').drawText({
 		fillStyle: color,
-		x: x, y: y,
+		x: x+2, y: y,
 		fontSize: 16,
 		fontFamily: 'PerfectDOSVGA437Win',
 		align: 'left',
@@ -56,7 +56,7 @@ $("#settings input, #settings select").on('change', function() {
 	switch(type) {
 		case 'luma':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2016, AuroraWright';
+			line2 = 'Copyright(C) 2017, AuroraWright';
 			break;
 		case 'menuhax':
 			$topscreen.attr('width', 800);
@@ -71,7 +71,7 @@ $("#settings input, #settings select").on('change', function() {
 		height: 240
 	}).drawImage({
 		source: 'images/symbols.png',
-		x: 0, y: 16,
+		x: 1, y: 16,
 		sWidth: 21,
 		sHeight: 29,
 		sx: 0, sy: 16
