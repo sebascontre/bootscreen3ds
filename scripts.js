@@ -156,6 +156,6 @@ $("#settings input, #settings select").on('change', function() {
 
 });
 
-window.onload = function() { $("#settings input").trigger('change'); }
+window.onload = function() { $("#settings input").trigger('change'); (adsbygoogle = window.adsbygoogle || []).push({}); }
 $('input[name=boottool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 $('input[name=auxtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
