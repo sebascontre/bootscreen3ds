@@ -1,7 +1,8 @@
+/* global $ */
 $.jCanvas.defaults.fromCenter = false;
 
 function write(x, y, text) {
-	letter = text.substr(0,1);
+	var letter = text.substr(0,1);
 	$('canvas').drawText({
 		fillStyle: '#828282',
 		x: x, y: y,
@@ -17,18 +18,18 @@ function write(x, y, text) {
 }
 
 $("#settings input, #settings select").on('change', function() {
-	$form = $("#settings");
 
-	type = $('select[name=type] option:selected', "#settings").val();
-	text = $('select[name=type] option:selected', "#settings").text();
+
+	var type = $('select[name=type] option:selected', "#settings").val();
+	var text = $('select[name=type] option:selected', "#settings").text();
 
 	switch(type) {
 		case 'luma':
-			line2 = 'Copyrigth(C) 2016, AuroraWright';
+			var line2 = 'Copyrigth(C) 2016, AuroraWright';
 			$('canvas').attr('width', 400);
 			break;
 		case 'menuhax':
-			line2 = 'Copyrigth(C) 2015, yellow8';
+			var line2 = 'Copyrigth(C) 2015, yellow8';
 			$('canvas').attr('width', 800);
 			break;
 	}
@@ -59,9 +60,10 @@ $("#settings input, #settings select").on('change', function() {
 	write(24, 16*2, line2);
 
 	/* Check Model, Region and SD */
-	model = $('input[name=model]:checked', "#settings").val();
-	region = $('select[name=region] option:selected', "#settings").val();
-	sd = $('select[name=sd] option:selected', "#settings").val();
+	var model = $('input[name=model]:checked', "#settings").val();
+	var region = $('select[name=region] option:selected', "#settings").val();
+	var sd = $('select[name=sd] option:selected', "#settings").val();
+	var processor = 0;
 
 	switch(model) {
 		case '3DS':
@@ -101,7 +103,7 @@ $("#settings input, #settings select").on('change', function() {
 	write(0, 16*11, 'Detecting Primary Slave  ... '+sd+' microSD Card');
 
 	if ($('canvas').width() == 800) {
-		img = new Image();
+		var img = new Image();
 		img.src = $('canvas').getCanvasImage();
 
 		console.log(img.src);
