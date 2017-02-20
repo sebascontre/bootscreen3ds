@@ -4,7 +4,10 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,700" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+	
 	<link rel="stylesheet" href="webfont/PerfectDOSVGA437Win.css">
+	
+	<meta property="og:image" content="https://avatars2.githubusercontent.com/u/1657758" />
     
     <style type="text/css">
         h1 { font-family: PerfectDOSVGA437Win; text-align: center; font-size: 48px; letter-spacing: -2px; }
@@ -105,6 +108,70 @@
 					<option value="menuhax">Menuhax v2.1</option>
 				</select>
 			</fieldset>
+			<fieldset class="form-group col-xs-7">
+            <label for="something">Other Options</label>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="hold" checked="checked"> <strong>Hold</strong>
+                    <select name="onboot" class="form-control form-control-sm select-inline">
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="X">X</option>
+                        <option value="Y">Y</option>
+                        <option value="UP">UP</option>
+                        <option value="DOWN">DOWN</option>
+                        <option value="LEFT">LEFT</option>
+                        <option value="RIGHT">RIGHT</option>
+                        <option value="START">START</option>
+                        <option value="SELECT" selected="selected">SELECT</option>
+                    </select> <strong>on boot</strong> to enter 
+                    <input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
+                    <select name="boottool" class="form-control form-control-sm select-inline">
+                        <option value="lumasettings" selected="selected">Configuration Menu</option>
+                        <option value="decrypt9">Decrypt9</option>
+                        <option value="hourglass9">Hourglass9</option>
+                        <option value="emunand">EmuNAND</option>
+                        <option value="sysnand">SysNAND</option>
+                        <option value="custom"><em>Custom</em></option>
+                    </select>.
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="secondLine"> <strong>Hold</strong>
+                    <select name="secondButton" class="form-control form-control-sm select-inline">
+                        <option value="L" selected="selected">L</option>
+                        <option value="R">R</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="X">X</option>
+                        <option value="Y">Y</option>
+                        <option value="UP">UP</option>
+                        <option value="DOWN">DOWN</option>
+                        <option value="LEFT">LEFT</option>
+                        <option value="RIGHT">RIGHT</option>
+                        <option value="START">START</option>
+                        <option value="SELECT">SELECT</option>
+                    </select> <select name="secondTime" class="form-control form-control-sm select-inline">
+                    	<option value="now" selected="selected">now</option>
+                    	<option value="boot">on boot</option>
+                    </select> to enter to 
+                    <input type="text" name="secondTool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
+                    <select name="secondTool" class="form-control form-control-sm select-inline">
+                        <option value="rxtools" selected="selected">Rxtools settings</option>
+                        <option value="bootmanager">Boot Manager</option>
+                        <option value="gateway">Gateway Menu</option>
+                        <option value="settings">Settings</option>
+                        <option value="decrypt9">Decrypt9</option>
+                        <option value="hourglass9">Hourglass9</option>
+                        <option value="custom"><em>Custom</em></option>
+                    </select>.
+                </label>
+            </div>
+  
+        </fieldset>
 		</form>
 	
 		<center><canvas width="400" height="240" id="topscreen"></canvas></center>
@@ -113,7 +180,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.7.3/jcanvas.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-	<script src="javascript/base.js"></script>
+	<script src="scripts.js"></script>
 
     <center><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- 3D -->
