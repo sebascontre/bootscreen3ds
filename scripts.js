@@ -92,7 +92,10 @@ $("#settings input, #settings select").on('change', function() {
 			processor = 2; sd += ' SD'			
 			break;
 		case '3DSXL':
-			write(0, 16*5, 'Nintendo 3DS XL SPR-001('+region+')');
+			if (region == 'JPN')
+				write(0, 16*5, 'Nintendo 3DS LL SPR-001('+region+')');
+			else
+				write(0, 16*5, 'Nintendo 3DS XL SPR-001('+region+')');
 			processor = 2; sd += ' SD'
 			break;
 		case '2DS':
@@ -104,7 +107,10 @@ $("#settings input, #settings select").on('change', function() {
 			processor = 4; sd += ' microSD'
 			break;
 		case 'n3DSXL':
-			write(0, 16*5, 'New Nintendo 3DS XL RED-001('+region+')');
+			if (region == 'JPN')
+				write(0, 16*5, 'New Nintendo 3DS LL RED-001('+region+')');
+			else
+				write(0, 16*5, 'New Nintendo 3DS XL RED-001('+region+')');
 			processor = 4; sd += ' microSD'
 			break;
 	}
