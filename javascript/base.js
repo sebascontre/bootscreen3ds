@@ -69,7 +69,7 @@ $("#settings input, #settings select").on('change', function() {
 			processor = 2; sd += ' SD'
 			break;
 		case '2DS':
-			write(0, 16*5, 'Nintendo 2DS XL FTR-001('+region+')');
+			write(0, 16*5, 'Nintendo 2DS FTR-001('+region+')');
 			processor = 2; sd += ' SD'
 			break;
 		case 'n3DS':
