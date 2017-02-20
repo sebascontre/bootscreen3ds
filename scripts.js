@@ -126,7 +126,7 @@ $("#settings input, #settings select").on('change', function() {
 			break;
 	}
 
-	write(0, 16*9,  'Detecting Primary Master ... 2G Internal Memory');
+	write(0, 16*9,  'Detecting Primary Master ... '+ processor/2 +'G Internal Memory');
 	write(0, 16*10, 'Detecting Primary Slave  ... '+sd+' Card');
 	
 	if (!use_bootinput)
