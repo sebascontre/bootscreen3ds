@@ -133,7 +133,10 @@
                         <option value="RIGHT">RIGHT</option>
                         <option value="START">START</option>
                         <option value="SELECT" selected="selected">SELECT</option>
-                    </select> <strong>on boot</strong> to enter 
+                    </select> <select name="firstTime" class="form-control form-control-sm select-inline">
+                    	<option value="now">now</option>
+                    	<option value="boot" selected="selected">on boot</option>
+                    </select> to enter 
                     <input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
                     <select name="boottool" class="form-control form-control-sm select-inline">
                         <option value="lumasettings" selected="selected">Configuration Menu</option>
@@ -164,7 +167,7 @@
                     </select> <select name="secondTime" class="form-control form-control-sm select-inline">
                     	<option value="now">now</option>
                     	<option value="boot" selected="selected">on boot</option>
-                    </select> to enter to 
+                    </select> to enter 
                     <input type="text" name="secondTool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
                     <select name="secondTool" class="form-control form-control-sm select-inline">
                         <option value="rxtools">Rxtools settings</option>

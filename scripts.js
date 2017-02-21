@@ -138,7 +138,7 @@ $("#settings input, #settings select").on('change', function() {
 	var boot_bool = $('input[name=hold]', "#settings").is(':checked');
 	var boot_keys = $('select[name=onboot] option:selected', "#settings").val();
 	var boot_tool = $('input[name=boottool]', "#settings").val();
-	var boot_text = '_Hold ' + boot_keys + ' on boot_ to enter _' + boot_tool + '_.';
+	var boot_text = '_Hold ' + boot_keys + ' '+ $('select[name=firstTime] option:selected').text() +'_ to enter _' + boot_tool + '_.';
 
 	var aux_bool = $('input[name=secondLine]', "#settings").is(':checked');
 	var aux_keys = $('select[name=secondButton] option:selected').val();
