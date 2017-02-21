@@ -24,3 +24,29 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 4. Press start to save and reboot.
 
 5. Enjoy your splash!
+
+
+## Changelog
+
+**Version 5.0.4**
+
+* Further improvements to overall system stability and other minor adjustments have been made to enhance the user experience.
+
+**Version 5.0.3**
+
+* Fix error with the Internal Memory selector, now changes with the 3DS Model.
+* Add ``Luma3DS hourly`` option to type selector.
+
+**Version 5.0.2**
+
+* Fix typo with XL models in JPN region. The models are ``LL`` instead of ``XL``.
+
+**Version 5.0.1**
+
+* Fix typo from ``Copyrigth`` to ``Copyright``
+* Add ``200GB`` and ``256GB`` options to SD Card Selector
+
+**Version 5.0**
+
+* Rewrite all the code from PHP-version to Javascript.
+* Use real font with canvas instead of premade png images.
