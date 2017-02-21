@@ -1,14 +1,20 @@
 /* global $ */
 $.jCanvas.defaults.fromCenter = false;
 
+/* .getCanvasImage() don't work on Google Chrome if the page is served from a file URL (file://).
+This is a limitation of Google Chrome’s sandboxing architecture, and therefore cannot be fixed */ 
 if (window.location.protocol == 'file:' && window.navigator.vendor == "Google Inc.") {
 	$('#offline_warning').show();
-	$('select[name=type] option[value=menuhax]', "#settings").attr('disabled', 'disabled');
+	$('select[name=type] option[value=menuhax]', "#settings").prop('disabled', true);
 }
 
-function write(x, y, text, color = 'gray') {
+/* jCanvas has an option for write full strings but don't have a option for control letter spacing.
+The font has a letter spacing of 2px, and the generator needs a spacing of 1px.
+This function allows to write character by character with only 1px of spacing. */
+var write = function(x, y, text, color = 'gray') {
 	var letter = text.substr(0,1);
 	
+	/* Search for specials characters */
 	if (letter == '_') {
 		text = text.substr(1);
 		letter = text.substr(0,1);
@@ -16,6 +22,7 @@ function write(x, y, text, color = 'gray') {
 		else if (color == 'white') color = 'gray';
 	}
 
+	/* Draw 1 character */
 	$('#topscreen').drawText({
 		fillStyle: color,
 		x: x+2, y: y,
@@ -25,11 +32,13 @@ function write(x, y, text, color = 'gray') {
 		text: letter
 	});
 	
+	/* Remove the character writed from the string, and if itn't empty, continue recursive */
 	text = text.substr(1);
 	if (text != '')
 		write(x+8, y, text, color);
 }
 
+/* This draw the entire splash screen with any change on the form */
 $("#settings input, #settings select").on('change', function() {
 	var $topscreen = $('#topscreen');
 	

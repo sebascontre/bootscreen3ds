@@ -5,7 +5,6 @@ span.credit { margin-top: -36px; font-size: 12px; }
 .select-inline { width: auto; display: inline-block; }
 .form-control-sm { padding: .1rem .2rem; font-weight: 600; }
 label[for] { font-weight: 600; display: block; width: 100%; }
-img#preview { margin: 0 auto; }
 fieldset.form-group { display: inline-block !important; }
 .col-12 .radio { width: 19%; height: 80px; display: inline-block; position: relative; min-height: 1px;}
 .col-12 .radio * { vertical-align: center; }
