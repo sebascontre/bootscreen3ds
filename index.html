@@ -133,7 +133,10 @@
                         <option value="RIGHT">RIGHT</option>
                         <option value="START">START</option>
                         <option value="SELECT" selected="selected">SELECT</option>
-                    </select> <strong>on boot</strong> to enter 
+                    </select> <select name="firstTime" class="form-control form-control-sm select-inline">
+                    	<option value="now">now</option>
+                    	<option value="boot" selected="selected">on boot</option>
+                    </select> to enter 
                     <input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
                     <select name="boottool" class="form-control form-control-sm select-inline">
                         <option value="lumasettings" selected="selected">Configuration Menu</option>
@@ -149,7 +152,7 @@
                 <label>
                     <input type="checkbox" name="secondLine"> <strong>Hold</strong>
                     <select name="secondButton" class="form-control form-control-sm select-inline">
-                        <option value="L" selected="selected">L</option>
+                        <option value="L">L</option>
                         <option value="R">R</option>
                         <option value="A">A</option>
                         <option value="B">B</option>
@@ -159,16 +162,16 @@
                         <option value="DOWN">DOWN</option>
                         <option value="LEFT">LEFT</option>
                         <option value="RIGHT">RIGHT</option>
-                        <option value="START">START</option>
+                        <option value="START" selected="selected">START</option>
                         <option value="SELECT">SELECT</option>
                     </select> <select name="secondTime" class="form-control form-control-sm select-inline">
-                    	<option value="now" selected="selected">now</option>
-                    	<option value="boot">on boot</option>
-                    </select> to enter to 
+                    	<option value="now">now</option>
+                    	<option value="boot" selected="selected">on boot</option>
+                    </select> to enter 
                     <input type="text" name="secondTool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
                     <select name="secondTool" class="form-control form-control-sm select-inline">
-                        <option value="rxtools" selected="selected">Rxtools settings</option>
-                        <option value="bootmanager">Boot Manager</option>
+                        <option value="rxtools">Rxtools settings</option>
+                        <option value="bootmanager" selected="selected">Boot Manager</option>
                         <option value="gateway">Gateway Menu</option>
                         <option value="settings">Settings</option>
                         <option value="decrypt9">Decrypt9</option>
