@@ -9,3 +9,5 @@ img#preview { margin: 0 auto; }
 fieldset.form-group { display: inline-block !important; }
 .col-12 .radio { width: 19%; height: 80px; display: inline-block; position: relative; min-height: 1px;}
 .col-12 .radio * { vertical-align: center; }
+select[name="firstTime"], select[name="secondTime"] { width: 90px !important; }
+select[name="boottool"], select[name="secondTool"], input[name="boottool"], input[name="secondTool"] { width: 180px !important; }

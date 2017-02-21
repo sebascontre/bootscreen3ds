@@ -22,7 +22,7 @@
 
 	<div class="container">
 		<h1>Old School PC BIOS</h1>
-		<span>Splash Bootscreen Generator <small>v5.1</small></span>
+		<span>Splash Bootscreen Generator <small>v5.1.1</small></span>
 		<span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
 
 		<div id="offline_warning" class="alert alert-warning" style="display: none";><strong>Warning!</strong> The Downloads and MenuxHax methods don't work locally on Google Chrome and similar browsers, if it's your case, please use <a href="https://sebascontre.github.io/bootscreen3ds/">online version</a> instead.</div>
@@ -91,7 +91,7 @@
 					<option value="menuhax">Menuhax v2.1</option>
 				</select>
 			</fieldset>
-			<fieldset class="form-group col-xs-7">
+			<fieldset class="form-group col-8">
             <label for="something">Other Options</label>
             <div class="checkbox">
                 <label>
@@ -158,7 +158,13 @@
                 </label>
             </div>
   
-        </fieldset>
+        	</fieldset>
+        	<fieldset class="form-group col-3" style="vertical-align: top">
+        		 <label for="bootom_options">Extra Options</label>
+        		 <div class="checkbox">
+        		 	<label><input type="checkbox" name="energyLuma"> Energy Luma Logo.</label>
+        		 </div>
+        	</fieldset>
 		</form>
 	
 		<center><canvas width="400" height="240" id="topscreen"></canvas></center>

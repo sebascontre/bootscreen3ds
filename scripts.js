@@ -57,10 +57,14 @@ $("#settings input, #settings select").on('change', function() {
 		case 'luma':
 			$topscreen.attr('width', 400);
 			line2 = 'Copyright(C) 2017, AuroraWright';
+			if ($('input[name=energyLuma]', "#settings").is(':disabled'))
+				$('input[name=energyLuma]', "#settings").prop('disabled', false);
 			break;
 		case 'menuhax':
 			$topscreen.attr('width', 800);
 			line2 = 'Copyright(C) 2015, yellow8';
+			if ($('input[name=energyLuma]', "#settings").is(':checked'))
+				$('input[name=energyLuma]', "#settings").prop('checked', false).prop('disabled', true);
 			break;
 	}
 
@@ -74,14 +78,31 @@ $("#settings input, #settings select").on('change', function() {
 		x: 1, y: 16,
 		sWidth: 21,
 		sHeight: 29,
-		sx: 0, sy: 16
-	}).drawImage({
-		source: 'images/symbols.png',
-		x: 265, y: 16,
-		sWidth: 135,
-		sHeight: 84,
-		sx: 265, sy: 16
+		sx: 40, sy: 10
 	});
+	
+	if ($('input[name=energyLuma]', "#settings").is(':checked')) {
+		$topscreen.drawImage({
+			source: 'images/symbols.png',
+			x: 266, y: 16,
+			sWidth: 133,
+			sHeight: 84,
+			sx: 0, sy: 84
+		})
+	} else {
+		$topscreen.drawImage({
+			source: 'images/symbols.png',
+			x: 266, y: 16,
+			sWidth: 133,
+			sHeight: 84,
+			sx: 0, sy: 0
+		}).drawRect({
+			fillStyle: 'black',
+			x: 306, y: 26,
+			width: 21,
+			height: 29
+		});
+	}
 
 	write(24, 16*1, line1);
 	write(24, 16*2, line2);
