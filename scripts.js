@@ -1,6 +1,11 @@
 /* global $ */
 $.jCanvas.defaults.fromCenter = false;
 
+if (window.location.protocol == 'file:' && window.navigator.vendor == "Google Inc.") {
+	$('#offline_warning').show();
+	$('select[name=type] option[value=menuhax]', "#settings").attr('disabled', 'disabled');
+}
+
 function write(x, y, text, color = 'gray') {
 	var letter = text.substr(0,1);
 	
@@ -11,7 +16,7 @@ function write(x, y, text, color = 'gray') {
 		else if (color == 'white') color = 'gray';
 	}
 
-	$('canvas').drawText({
+	$('#topscreen').drawText({
 		fillStyle: color,
 		x: x+2, y: y,
 		fontSize: 16,
@@ -24,11 +29,6 @@ function write(x, y, text, color = 'gray') {
 	if (text != '')
 		write(x+8, y, text, color);
 }
-
-$('canvas').drawImage({
-	source: 'images/symbols.png',
-	x: 0, y: 0,
-});
 
 $("#settings input, #settings select").on('change', function() {
 	var $topscreen = $('#topscreen');
@@ -89,7 +89,7 @@ $("#settings input, #settings select").on('change', function() {
 	switch(model) {
 		case '3DS':
 			write(0, 16*5, 'Nintendo 3DS CTR-001('+region+')');
-			processor = 2; sd += ' SD'			
+			processor = 2; sd += ' SD'
 			break;
 		case '3DSXL':
 			if (region == 'JPN')
@@ -127,7 +127,7 @@ $("#settings input, #settings select").on('change', function() {
 	}
 
 	write(0, 16*9,  'Detecting Primary Master ... '+ processor/2 +'G Internal Memory');
-	write(0, 16*10, 'Detecting Primary Slave  ... '+sd+' Card');
+	write(0, 16*10, 'Detecting Primary Slave  ... '+ sd +' Card');
 	
 	if (!use_bootinput)
 		$('input[name=boottool]', "#settings").val($('select[name=boottool] option:selected', "#settings").text());
@@ -162,6 +162,58 @@ $("#settings input, #settings select").on('change', function() {
 
 });
 
-window.onload = function() { $("#settings input").trigger('change'); (adsbygoogle = window.adsbygoogle || []).push({}); }
+$(document).ready(function() {
+	
+	$('canvas').drawImage({
+		source: 'images/symbols.png',
+		x: 0, y: 0,
+		load: function() {
+			$("select[name=region]", "#settings").trigger('change');
+			if ($('#offline_warning').is(':hidden'))
+				$('#downloadPNG, #downloadBIN').removeClass('disabled');
+		}
+	});
+	
+});
+
 $('input[name=boottool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 $('input[name=auxtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
+
+
+/* Create a PNG downloadable of the canvas */
+/* global download */
+$('#downloadPNG').click(function() {
+	if (!$(this).hasClass('disabled')) {
+		var filename = ($('#topscreen').width() == 400) ? 'splash.png' : 'imagedisplay.png';
+		var filedata = $('#topscreen').getCanvasImage();
+		download(filedata, filename, "image/png");
+	}
+});
+
+$('#downloadBIN').click(function() {
+	if (!$(this).hasClass('disabled')) {
+		var filename = ($('#topscreen').width() == 400) ? 'splash.bin' : 'menuhax_imagedisplay.bin';
+		
+		var width = $('#topscreen').height();
+		var height = $('#topscreen').width();
+		
+		var $canvas = $('<canvas/>').css({ position: 'absolute', top: 0, left: -1*width }).appendTo('body');
+		$canvas.attr('width', width).attr('height', height);
+
+		$canvas.drawImage({
+			source: $('#topscreen').getCanvasImage(),
+			x: width/2, y: height/2,
+			fromCenter: true,
+			rotate: 90
+		});
+
+		var canvasdata = $canvas.get(0).getContext('2d').getImageData(0, 0, width, height).data;
+		var filedata = '';
+		
+		for(var i = 0; i < canvasdata.length; i += 4)
+			filedata += String.fromCharCode(canvasdata[i+2], canvasdata[i+1], canvasdata[i]);
+
+		$canvas.remove();
+		download('data:application/octet-stream;base64,' + window.btoa(filedata), filename);
+	}
+});

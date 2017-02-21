@@ -3,15 +3,13 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 ## How do I use this?
 
-1. Load the website. If you downloaded it, load index.html.
+1. Load the [website](https://sebascontre.github.io/bootscreen3ds/).
 
 2. Use the options to tweak the screen to your liking.
 
-3. Right click your new image and save it.
+3. Download the BIN file of your screen.
 
-4. Use a png to bin converter, like [this one.](https://xem.github.io/3DShomebrew/tools/image-to-bin.html) **(MAKE SURE YOU SELECT ROTATE 90 DEGREES, OR THE IMAGE WILL NOT COME OUT CORRECTLY ON YOUR 3DS)**
-
-5. Put the image in the correct spot on the SD Card.
+4. Put the BIN file in the correct spot on the SD Card.
 
 ##### I use Luma3DS and the splash doesn't work! How do I fix that?
 
@@ -27,6 +25,11 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 
 ## Changelog
+
+**Version 5.1**
+
+* Add buttons to download PNG image and BIN file.
+* BIN files are now generated in the same page, don't need to carry over other tool.
 
 **Version 5.0.4**
 

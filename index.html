@@ -5,51 +5,27 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Roboto:400,700" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
-	
 	<link rel="stylesheet" href="webfont/PerfectDOSVGA437Win.css">
+	<link rel="stylesheet" href="styles.css">
 	
 	<meta property="og:title" content="Old School PC BIOS" />
 	<meta property="og:description" content="Splash Bootscreen Generator for 3DS CFW" /> 
 	<meta property="og:image" content="https://estatico.pw/seba.im/2017/02/16150050/cropped-3.png" />
 	<meta property="og:url" content="https://sebascontre.github.io/bootscreen3ds/" />
     
-    <style type="text/css">
-        h1 { font-family: PerfectDOSVGA437Win; text-align: center; font-size: 48px; letter-spacing: -2px; }
-        span { font-family: 'Roboto', sans-serif; font-weight: 700; display: block; font-size: 16px; text-align: center; margin-top: -12px; margin-bottom: 40px; }
-        span.credit { margin-top: -36px; font-size: 12px; }
-        .container { width: 830px; margin: 32px auto 16px; }
-        .select-inline { width: auto; display: inline-block; }
-        .form-control-sm { padding: .1rem .2rem; font-weight: 600; }
-        label[for] { font-weight: 600; display: block; width: 100%; }
-        img#preview { margin: 0 auto; }
-
-		fieldset.form-group { display: inline-block !important; }
-        
-        .col-12 .radio { width: 19%; height: 80px; display: inline-block;
-    position: relative;
-    min-height: 1px;
-
-
-            
-        }
-        
-        .col-12 .radio * { vertical-align: center; }
-    </style>
-
-	
-
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
 </head>
-
 <body>
 	<a href="https://github.com/sebascontre/bootscreen3ds"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
 	<div class="container">
 		<h1>Old School PC BIOS</h1>
-		<span>Splash Bootscreen Generator <small>v5.0.4-javascript</small></span>
+		<span>Splash Bootscreen Generator <small>v5.1</small></span>
 		<span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
+
+		<div id="offline_warning" class="alert alert-warning" style="display: none";><strong>Warning!</strong> The Downloads and MenuxHax methods don't work locally on Google Chrome and similar browsers, if it's your case, please use <a href="https://sebascontre.github.io/bootscreen3ds/">online version</a> instead.</div>
 
 		<form id="settings">
 			<fieldset class="form-group col-12">
@@ -173,6 +149,7 @@
                         <option value="rxtools">Rxtools settings</option>
                         <option value="bootmanager" selected="selected">Boot Manager</option>
                         <option value="gateway">Gateway Menu</option>
+                        <option value="lumasettings">Configuration Menu</option>
                         <option value="settings">Settings</option>
                         <option value="decrypt9">Decrypt9</option>
                         <option value="hourglass9">Hourglass9</option>
@@ -185,29 +162,30 @@
 		</form>
 	
 		<center><canvas width="400" height="240" id="topscreen"></canvas></center>
+		<center>
+			<a id="downloadPNG" class="btn btn-primary disabled" href="#png" role="button">Download PNG</a>
+			<a id="downloadBIN" class="btn btn-primary disabled" href="#bin" role="button">Download BIN</a>
+		</center>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.7.3/jcanvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.7/download.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 	<script src="scripts.js"></script>
 
-    <center><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 3D -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-8039083170373087"
-     data-ad-slot="3412912701"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+    <center>
+    	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-8039083170373087" data-ad-slot="3412912701"></ins>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
-<br/>
-<script id="_wauaux">var _wau = _wau || []; _wau.push(["small", "4wlmvp1mr28d", "aux"]);
-(function() {var s=document.createElement("script"); s.async=true;
-s.src="https://widgets.amung.us/small.js";
-document.getElementsByTagName("head")[0].appendChild(s);
-})();</script>
-</center>
+		<br/>
+		<script id="_wauaux">var _wau = _wau || []; _wau.push(["small", "4wlmvp1mr28d", "aux"]);
+			(function() {var s=document.createElement("script"); s.async=true;
+				s.src="https://widgets.amung.us/small.js";
+				document.getElementsByTagName("head")[0].appendChild(s);
+			})();
+		</script>
+	</center>
 </body>
 </html>

@@ -1,0 +1,11 @@
+h1 { font-family: PerfectDOSVGA437Win; text-align: center; font-size: 48px; letter-spacing: -2px; }
+span { font-family: 'Roboto', sans-serif; font-weight: 700; display: block; font-size: 16px; text-align: center; margin-top: -12px; margin-bottom: 40px; }
+span.credit { margin-top: -36px; font-size: 12px; }
+.container { width: 830px; margin: 32px auto 16px; }
+.select-inline { width: auto; display: inline-block; }
+.form-control-sm { padding: .1rem .2rem; font-weight: 600; }
+label[for] { font-weight: 600; display: block; width: 100%; }
+img#preview { margin: 0 auto; }
+fieldset.form-group { display: inline-block !important; }
+.col-12 .radio { width: 19%; height: 80px; display: inline-block; position: relative; min-height: 1px;}
+.col-12 .radio * { vertical-align: center; }
