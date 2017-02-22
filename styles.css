@@ -1,12 +1,69 @@
-h1 { font-family: PerfectDOSVGA437Win; text-align: center; font-size: 48px; letter-spacing: -2px; }
-span { font-family: 'Roboto', sans-serif; font-weight: 700; display: block; font-size: 16px; text-align: center; margin-top: -12px; margin-bottom: 40px; }
-span.credit { margin-top: -36px; font-size: 12px; }
-.container { width: 830px; margin: 32px auto 16px; }
-.select-inline { width: auto; display: inline-block; }
-.form-control-sm { padding: .1rem .2rem; font-weight: 600; }
-label[for] { font-weight: 600; display: block; width: 100%; }
-fieldset.form-group { display: inline-block !important; }
-.col-12 .radio { width: 19%; height: 80px; display: inline-block; position: relative; min-height: 1px;}
-.col-12 .radio * { vertical-align: center; }
-select[name="firstTime"], select[name="secondTime"] { width: 90px !important; }
-select[name="boottool"], select[name="secondTool"], input[name="boottool"], input[name="secondTool"] { width: 180px !important; }
+h1 {
+    font-family: PerfectDOSVGA437Win;
+    font-size: 48px;
+    letter-spacing: -2px;
+    padding-top: 32px;
+    text-align: center;
+}
+
+p#subtitle {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    margin-top: -12px;
+    text-align: center;
+}
+
+p#credit {
+    font-size: 12px;
+    margin-top: -40px;
+    text-align: center;
+}
+
+form#settings {
+    margin-bottom: 24px;
+}
+
+legend.col-form-legend {
+    display: block;
+    font-weight: 600;
+    width: 100%;
+}
+
+#consoles .form-check-label input[type=radio] {
+    height: 100px;
+    vertical-align: middle;
+}
+
+#consoles .form-check-label img {
+    vertical-align: middle;
+}
+
+.form-control-sm {
+    font-weight: 600;
+    margin: 0 .2rem;
+    padding: .1rem .2rem;
+}
+
+input.form-control-sm {
+    padding: .35rem .4rem .3rem;
+}
+
+.col-4 .form-control-sm {
+    font-weight: 400;
+    margin: 0;
+}
+
+select[name="firstTime"],
+select[name="secondTime"] {
+    width: 90px !important;
+}
+
+select[name="boottool"],
+input[name="boottool"],
+select[name="secondTool"],
+input[name="secondTool"] {
+    width: 180px !important;
+}
