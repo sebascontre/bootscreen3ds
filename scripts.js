@@ -5,7 +5,8 @@ $.jCanvas.defaults.fromCenter = false;
 This is a limitation of Google Chrome’s sandboxing architecture, and therefore cannot be fixed */ 
 if (window.location.protocol == 'file:' && window.navigator.vendor == "Google Inc.") {
 	$('#offline_warning').show();
-	$('select[name=type] option[value=menuhax]', "#settings").prop('disabled', true);
+	$('select[name=type] option[value=menuhax2015]', "#settings").prop('disabled', true);
+	$('select[name=type] option[value=menuhax2016]', "#settings").prop('disabled', true);
 }
 
 /* jCanvas has an option for write full strings but don't have a option for control letter spacing.
@@ -63,17 +64,21 @@ $("#settings input, #settings select").on('change', function() {
 	}
 
 	switch(type) {
-		case 'luma':
+		case 'luma2016':
+			$topscreen.attr('width', 400);
+			line2 = 'Copyright(C) 2016, AuroraWright';
+			break;
+		case 'luma2017':
 			$topscreen.attr('width', 400);
 			line2 = 'Copyright(C) 2017, AuroraWright';
-			if ($('input[name=energyLuma]', "#settings").is(':disabled'))
-				$('input[name=energyLuma]', "#settings").prop('disabled', false);
 			break;
-		case 'menuhax':
+		case 'menuhax2015':
 			$topscreen.attr('width', 800);
 			line2 = 'Copyright(C) 2015, yellow8';
-			if ($('input[name=energyLuma]', "#settings").is(':checked'))
-				$('input[name=energyLuma]', "#settings").prop('checked', false).prop('disabled', true);
+			break;
+		case 'menuhax2016':
+			$topscreen.attr('width', 800);
+			line2 = 'Copyright(C) 2016, yellow8';
 			break;
 	}
 
@@ -90,27 +95,39 @@ $("#settings input, #settings select").on('change', function() {
 		sx: 40, sy: 10
 	});
 	
-	if ($('input[name=energyLuma]', "#settings").is(':checked')) {
-		$topscreen.drawImage({
-			source: 'images/symbols.png',
-			x: 266, y: 16,
-			sWidth: 133,
-			sHeight: 84,
-			sx: 0, sy: 84
-		})
-	} else {
-		$topscreen.drawImage({
-			source: 'images/symbols.png',
-			x: 266, y: 16,
-			sWidth: 133,
-			sHeight: 84,
-			sx: 0, sy: 0
-		}).drawRect({
-			fillStyle: 'black',
-			x: 306, y: 26,
-			width: 21,
-			height: 29
-		});
+	switch ($('select[name=logoOptions] option:selected', "#settings").val()) {
+		case 'energyStar':
+			$topscreen.drawImage({
+				source: 'images/symbols.png',
+				x: 266, y: 16,
+				sWidth: 133,
+				sHeight: 84,
+				sx: 0, sy: 0
+			}).drawRect({
+				fillStyle: 'black',
+				x: 306, y: 26,
+				width: 21,
+				height: 29
+			});
+			break;
+		case 'energyLuma':
+			$topscreen.drawImage({
+				source: 'images/symbols.png',
+				x: 266, y: 16,
+				sWidth: 133,
+				sHeight: 84,
+				sx: 0, sy: 84
+			});
+			break;
+		case 'lumaIcon':
+			$topscreen.drawImage({
+				source: 'images/symbols.png',
+				x: 266, y: 8,
+				sWidth: 133,
+				sHeight: 84,
+				sx: 0, sy: 84*2
+			});
+			break;
 	}
 
 	write(24, 16*1, line1);

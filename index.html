@@ -25,148 +25,173 @@
 
 	<div class="container">
 		<h1>Old School PC BIOS</h1>
-		<span>Splash Bootscreen Generator <small>v5.1.1</small></span>
-		<span class="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></span>
+		<p id="subtitle">Splash Bootscreen Generator <small>v5.1.2</small></p>
+		<p id="credit">made with &#10084; by <a href="https://twitter.com/sebascontre">@sebascontre</a></p>
 
 		<div id="offline_warning" class="alert alert-warning" style="display: none";><strong>Warning!</strong> The Downloads and MenuxHax methods don't work locally on Google Chrome and similar browsers, if it's your case, please use <a href="https://sebascontre.github.io/bootscreen3ds/">online version</a> instead.</div>
 
 		<form id="settings">
-			<fieldset class="form-group col-12">
-				<label for="model">Nintendo 3DS Model</label>
-				<div class="radio">
-					<label><input type="radio" name="model" value="3DS" checked> <img class="console" src="images/3DS.png" /></label>
+			<div class="row">
+				<div class="col-8">
+					<fieldset id="consoles" class="form-check">
+						<legend class="col-form-legend">Nintendo 3DS Model</legend>
+						<div class="row">
+							<label class="form-check-label col">
+								<input type="radio" name="model" value="3DS" checked>
+								<img class="console" src="images/3DS.png" />
+							</label>
+							<label class="form-check-label col">
+								<input type="radio" name="model" value="3DSXL">
+								<img class="console" src="images/3DSXL.png" />
+							</label>
+							<label class="form-check-label col">
+								<input type="radio" name="model" value="n3DS">
+								<img class="console" src="images/n3DS.png" />
+							</label>
+							<label class="form-check-label col">
+								<input type="radio" name="model" value="n3DSXL">
+								<img class="console" src="images/n3DSXL.png" />
+							</label>
+							<label class="form-check-label col">
+								<input type="radio" name="model" value="2DS">
+								<img class="console" src="images/2DS.png" />
+							</label>
+						</div>
+					</fieldset>
 				</div>
-				<div class="radio">
-					<label><input type="radio" name="model" value="3DSXL"> <img class="console" src="images/3DSXL.png" /></label>
+				<div class="col-4">
+					<div class="row">
+						<div class="col-6">
+							<legend class="col-form-legend">Region</legend>
+							<select name="region" class="form-control">
+								<option value="USA" selected="selected">USA</option>
+								<option value="EUR">EUR</option>
+								<option value="JPN">JPN</option>
+							</select>
+						</div>
+						<div class="col-6">
+							<legend class="col-form-legend">SD Card</legend>
+							<select name="sd" class="form-control">
+								<option value="2G" selected="selected">2GB</option>
+								<option value="4G">4GB</option>
+								<option value="8G">8GB</option>
+								<option value="16G">16GB</option>
+								<option value="32G">32GB</option>
+								<option value="64G">64GB</option>
+								<option value="128G">128GB</option>
+								<option value="200G">200GB</option>
+								<option value="256G">256GB</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<legend class="col-form-legend">Type</legend>
+							<select name="type" class="form-control">
+								<option value="luma2017">Luma3DS hourly</option>
+								<option value="luma2016" selected="selected">Luma3DS v6.6</option>
+								<option value="luma2016">Luma3DS v6.5</option>
+								<option value="luma2016">Luma3DS v6.3.1</option>
+								<option value="luma2016">Luma3DS v6.3</option>
+								<option value="luma2016">Luma3DS v6.2.3</option>
+								<option value="luma2016">Luma3DS v6.2.2</option>
+								<option value="luma2016">Luma3DS v6.2.1</option>
+								<option value="luma2016">Luma3DS v6.2</option>
+								<option value="luma2016">Luma3DS v6.1.2</option>
+								<option value="luma2016">Luma3DS v6.1.1</option>
+								<option value="luma2016">Luma3DS v6.1</option>
+								<option value="luma2016">Luma3DS v6.0.1</option>
+								<option value="luma2016">Luma3DS v6.0</option>
+								<option value="menuhax2016">Menuhax v3.1</option>
+								<option value="menuhax2016">Menuhax v3.0</option>
+								<option value="menuhax2016">Menuhax v2.2</option>
+								<option value="menuhax2015">Menuhax v2.1</option>
+							</select>
+						</div>
+					</div>
 				</div>
-				<div class="radio">
-					<label><input type="radio" name="model" value="2DS"> <img class="console" src="images/2DS.png" /></label>
+			</div>
+			<div class="row">
+				<div class="col-8">
+					<legend class="col-form-legend">Other Options</legend>
+					<div class="form-check form-inline">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" name="hold" checked="checked">
+							<strong>Hold</strong>
+							<select name="onboot" class="form-control form-control-sm">
+								<option value="L">L</option>
+								<option value="R">R</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="X">X</option>
+								<option value="Y">Y</option>
+								<option value="UP">UP</option>
+								<option value="DOWN">DOWN</option>
+								<option value="LEFT">LEFT</option>
+								<option value="RIGHT">RIGHT</option>
+								<option value="START">START</option>
+								<option value="SELECT" selected="selected">SELECT</option>
+							</select>
+							<select name="firstTime" class="form-control form-control-sm">
+								<option value="now">now</option>
+								<option value="boot" selected="selected">on boot</option>
+							</select> to enter
+							<input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm" />
+							<select name="boottool" class="form-control form-control-sm">
+								<option value="lumasettings" selected="selected">Configuration Menu</option>
+								<option value="decrypt9">Decrypt9</option>
+								<option value="hourglass9">Hourglass9</option>
+								<option value="emunand">EmuNAND</option>
+								<option value="sysnand">SysNAND</option>
+								<option value="custom"><em>Custom</em></option>
+							</select>.
+						</label>
+					</div>
+					<div class="form-check form-inline">
+						<label class="form-check-label">
+							<input class="form-check-input" type="checkbox" name="secondLine">
+							<strong>Hold</strong>
+							<select name="secondButton" class="form-control form-control-sm select-inline">
+								<option value="L">L</option>
+								<option value="R">R</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="X">X</option>
+								<option value="Y">Y</option>
+								<option value="UP">UP</option>
+								<option value="DOWN">DOWN</option>
+								<option value="LEFT">LEFT</option>
+								<option value="RIGHT">RIGHT</option>
+								<option value="START" selected="selected">START</option>
+								<option value="SELECT">SELECT</option>
+							</select> <select name="secondTime" class="form-control form-control-sm">
+								<option value="now">now</option>
+								<option value="boot" selected="selected">on boot</option>
+							</select> to enter 
+							<input type="text" name="secondTool" val="." style="display: none;" class="form-control form-control-sm" />
+							<select name="secondTool" class="form-control form-control-sm">
+								<option value="rxtools">Rxtools settings</option>
+								<option value="bootmanager" selected="selected">Boot Manager</option>
+								<option value="gateway">Gateway Menu</option>
+								<option value="lumasettings">Configuration Menu</option>
+								<option value="settings">Settings</option>
+								<option value="decrypt9">Decrypt9</option>
+								<option value="hourglass9">Hourglass9</option>
+								<option value="custom"><em>Custom</em></option>
+							</select>.
+						</label>
+					</div>
 				</div>
-				<div class="radio">
-					<label><input type="radio" name="model" value="n3DS"> <img class="console" src="images/n3DS.png" /></label>
+				<div class="col-4">
+					<legend class="col-form-legend">Extra Options</legend>
+					<select name="logoOptions" class="form-control form-control-sm">
+						<option value="noLogo">No Logo</option>
+						<option value="energyStar" selected="selected">Energy Star Logo</option>
+						<option value="energyLuma">Energy Luma Logo</option>
+						<option value="lumaIcon">Luma Icon</option>
+					</select>
 				</div>
-				<div class="radio">
-					<label><input type="radio" name="model" value="n3DSXL"> <img class="console" src="images/n3DSXL.png" /></label>
-				</div>
-			</fieldset>
-			<fieldset class="form-group col-2">
-				<label for="region">Region</label>
-				<select name="region" class="form-control">
-					<option value="USA" selected="selected">USA</option>
-					<option value="EUR">EUR</option>
-					<option value="JPN">JPN</option>
-				</select>
-			</fieldset>
-			<fieldset class="form-group col-2">
-				<label for="sd">SD Card</label>
-				<select name="sd" class="form-control">
-					<option value="2G" selected="selected">2GB</option>
-					<option value="4G">4GB</option>
-					<option value="8G">8GB</option>
-					<option value="16G">16GB</option>
-					<option value="32G">32GB</option>
-					<option value="64G">64GB</option>
-					<option value="128G">128GB</option>
-					<option value="200G">200GB</option>
-					<option value="256G">256GB</option>
-				</select>
-			</fieldset>
-			<fieldset class="form-group col-7">
-				<label for="type">Type</label>
-				<select name="type" class="form-control">
-					<option value="luma">Luma3DS hourly</option>
-					<option value="luma" selected="selected">Luma3DS v6.6</option>
-					<option value="luma">Luma3DS v6.5</option>
-					<option value="luma">Luma3DS v6.3.1</option>
-					<option value="luma">Luma3DS v6.3</option>
-					<option value="luma">Luma3DS v6.2.3</option>
-					<option value="luma">Luma3DS v6.2.2</option>
-					<option value="luma">Luma3DS v6.2.1</option>
-					<option value="luma">Luma3DS v6.2</option>
-					<option value="luma">Luma3DS v6.1.2</option>
-					<option value="luma">Luma3DS v6.1.1</option>
-					<option value="luma">Luma3DS v6.1</option>
-					<option value="luma">Luma3DS v6.0.1</option>
-					<option value="luma">Luma3DS v6.0</option>
-					<option value="menuhax">Menuhax v3.1</option>
-					<option value="menuhax">Menuhax v3.0</option>
-					<option value="menuhax">Menuhax v2.2</option>
-					<option value="menuhax">Menuhax v2.1</option>
-				</select>
-			</fieldset>
-			<fieldset class="form-group col-8">
-				<label for="something">Other Options</label>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="hold" checked="checked"> <strong>Hold</strong>
-						<select name="onboot" class="form-control form-control-sm select-inline">
-							<option value="L">L</option>
-							<option value="R">R</option>
-							<option value="A">A</option>
-							<option value="B">B</option>
-							<option value="X">X</option>
-							<option value="Y">Y</option>
-							<option value="UP">UP</option>
-							<option value="DOWN">DOWN</option>
-							<option value="LEFT">LEFT</option>
-							<option value="RIGHT">RIGHT</option>
-							<option value="START">START</option>
-							<option value="SELECT" selected="selected">SELECT</option>
-						</select> <select name="firstTime" class="form-control form-control-sm select-inline">
-							<option value="now">now</option>
-							<option value="boot" selected="selected">on boot</option>
-						</select> to enter 
-						<input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
-						<select name="boottool" class="form-control form-control-sm select-inline">
-							<option value="lumasettings" selected="selected">Configuration Menu</option>
-							<option value="decrypt9">Decrypt9</option>
-							<option value="hourglass9">Hourglass9</option>
-							<option value="emunand">EmuNAND</option>
-							<option value="sysnand">SysNAND</option>
-							<option value="custom"><em>Custom</em></option>
-						</select>.
-					</label>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="secondLine"> <strong>Hold</strong>
-						<select name="secondButton" class="form-control form-control-sm select-inline">
-							<option value="L">L</option>
-							<option value="R">R</option>
-							<option value="A">A</option>
-							<option value="B">B</option>
-							<option value="X">X</option>
-							<option value="Y">Y</option>
-							<option value="UP">UP</option>
-							<option value="DOWN">DOWN</option>
-							<option value="LEFT">LEFT</option>
-							<option value="RIGHT">RIGHT</option>
-							<option value="START" selected="selected">START</option>
-							<option value="SELECT">SELECT</option>
-						</select> <select name="secondTime" class="form-control form-control-sm select-inline">
-							<option value="now">now</option>
-							<option value="boot" selected="selected">on boot</option>
-						</select> to enter 
-						<input type="text" name="secondTool" val="." style="display: none;" class="form-control form-control-sm select-inline" />
-						<select name="secondTool" class="form-control form-control-sm select-inline">
-							<option value="rxtools">Rxtools settings</option>
-							<option value="bootmanager" selected="selected">Boot Manager</option>
-							<option value="gateway">Gateway Menu</option>
-							<option value="lumasettings">Configuration Menu</option>
-							<option value="settings">Settings</option>
-							<option value="decrypt9">Decrypt9</option>
-							<option value="hourglass9">Hourglass9</option>
-							<option value="custom"><em>Custom</em></option>
-						</select>.
-					</label>
-				</div>
-			</fieldset>
-			<fieldset class="form-group col-3" style="vertical-align: top">
-				 <label for="bootom_options">Extra Options</label>
-				 <div class="checkbox">
-					<label><input type="checkbox" name="energyLuma"> Energy Luma Logo.</label>
-				 </div>
-			</fieldset>
+			</div>
 		</form>
 	
 		<center><canvas width="400" height="240" id="topscreen"></canvas></center>
