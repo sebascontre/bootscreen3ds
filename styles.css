@@ -67,3 +67,7 @@ select[name="secondTool"],
 input[name="secondTool"] {
     width: 180px !important;
 }
+
+a.btn {
+    margin-bottom: 16px;
+}
