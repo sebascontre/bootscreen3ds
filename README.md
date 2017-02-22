@@ -26,10 +26,15 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 ## Changelog
 
+**Version 5.1.2**
+
+* Replace ``Energy Luma Logo`` check with a selector.
+* Add ``Luma Icon`` option and ``No Logo`` option` to logo selector.
+
 **Version 5.1.1**
 
-* Add "Extra Options" panel
-* Add "Energy Luma Logo" option.
+* Add ``Extra Options`` panel
+* Add ``Energy Luma Logo`` option.
 
 **Version 5.1**
 
