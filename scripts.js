@@ -209,7 +209,7 @@ $("#settings input, #settings select").on('change', function() {
 
 });
 
-$(document).ready(function() {
+$(window).load(function() {
 	
 	$('canvas').drawImage({
 		source: 'images/symbols.png',
