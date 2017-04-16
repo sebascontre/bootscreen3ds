@@ -26,6 +26,10 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 ## Changelog
 
+**Version 5.1.3**
+
+* Added Compatibility with Luma3DS 7.0
+
 **Version 5.1.2**
 
 * Replace ``Energy Luma Logo`` check with a selector.
