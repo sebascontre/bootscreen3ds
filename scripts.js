@@ -209,7 +209,7 @@ $("#settings input, #settings select").on('change', function() {
 
 });
 
-$(window).load(function() {
+window.onload = function() {
 	
 	$('canvas').drawImage({
 		source: 'images/symbols.png',
@@ -221,7 +221,7 @@ $(window).load(function() {
 		}
 	});
 	
-});
+};
 
 $('input[name=boottool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 $('input[name=auxtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
