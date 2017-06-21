@@ -26,6 +26,12 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 ## Changelog
 
+**Version 6.0**
+
+* Add New 2DS XL/LL support
+* Change CSS Framework for better desing
+* Changes in HTML for new CSS Framework
+
 **Version 5.1.9**
 
 * Add Luma3DS 8.0 to the list

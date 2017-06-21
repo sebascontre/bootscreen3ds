@@ -1,7 +1,47 @@
+@media only screen and (min-width:993px) {
+    .container {
+        width: 800px;
+    }
+}
+
+#consoles label {
+    text-align: center;
+}
+
+#consoles label input + img {
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 8px 0;
+}
+
+#consoles label input:checked + img {
+    opacity: 1;
+}
+
+#options .col {
+    margin-bottom: -10px;
+}
+
+#otheroptions p {
+    margin-top: 4px;
+    margin-left: 6px;
+    margin-bottom: -10px;
+}
+
+#otheroptions p > label {
+    margin-right: -8px;
+}
+
+#otheroptions p > span {
+    position: relative;
+    top: -10px;
+}
+
 h1 {
     font-family: PerfectDOSVGA437Win;
     font-size: 48px;
     letter-spacing: -2px;
+    margin: 0;
     padding-top: 32px;
     text-align: center;
 }
@@ -10,7 +50,7 @@ p#subtitle {
     display: block;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 40px;
     margin-top: -12px;
     text-align: center;
@@ -20,54 +60,4 @@ p#credit {
     font-size: 12px;
     margin-top: -40px;
     text-align: center;
-}
-
-form#settings {
-    margin-bottom: 24px;
-}
-
-legend.col-form-legend {
-    display: block;
-    font-weight: 600;
-    width: 100%;
-}
-
-#consoles .form-check-label input[type=radio] {
-    height: 100px;
-    vertical-align: middle;
-}
-
-#consoles .form-check-label img {
-    vertical-align: middle;
-}
-
-.form-control-sm {
-    font-weight: 600;
-    margin: 0 .2rem;
-    padding: .1rem .2rem;
-}
-
-input.form-control-sm {
-    padding: .35rem .4rem .3rem;
-}
-
-.col-4 .form-control-sm {
-    font-weight: 400;
-    margin: 0;
-}
-
-select[name="firstTime"],
-select[name="secondTime"] {
-    width: 90px !important;
-}
-
-select[name="boottool"],
-input[name="boottool"],
-select[name="secondTool"],
-input[name="secondTool"] {
-    width: 180px !important;
-}
-
-a.btn {
-    margin-bottom: 16px;
 }

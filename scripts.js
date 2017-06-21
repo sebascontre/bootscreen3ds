@@ -53,13 +53,13 @@ $("#settings input, #settings select").on('change', function() {
 
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
 		$('input[name=boottool]', "#settings").show();
-		$('select[name=boottool]', "#settings").hide();
+		$('select[name=boottool]', "#settings").parent().hide();
 		use_bootinput = true;
 	}
 	
 	if ($('select[name=secondTool] option:selected', "#settings").val() == 'custom') {
 		$('input[name=secondTool]', "#settings").show();
-		$('select[name=secondTool]', "#settings").hide();
+		$('select[name=secondTool]', "#settings").parent().hide();
 		use_auxinput = true;
 	}
 
@@ -148,6 +148,13 @@ $("#settings input, #settings select").on('change', function() {
 		case '2DS':
 			write(0, 16*5, 'Nintendo 2DS FTR-001('+region+')');
 			processor = 2; sd += ' SD'
+			break;
+		case 'n2DSXL':
+			if (region == 'JPN')
+				write(0, 16*5, 'New Nintendo 2DS XL JAN-001('+region+')');
+			else
+				write(0, 16*5, 'New Nintendo 2DS LL JAN-001('+region+')');
+			processor = 4; sd += ' SD'
 			break;
 		case 'n3DS':
 			write(0, 16*5, 'New Nintendo 3DS KTR-001('+region+')');
