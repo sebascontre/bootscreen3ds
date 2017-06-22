@@ -141,6 +141,8 @@ $("#settings input, #settings select").on('change', function() {
 		case '3DSXL':
 			if (region == 'JPN')
 				write(0, 16*5, 'Nintendo 3DS LL SPR-001('+region+')');
+			else if (region == 'CHN')
+				write(0, 16*5, 'iQue 3DS XL SPR-001('+region+')');
 			else
 				write(0, 16*5, 'Nintendo 3DS XL SPR-001('+region+')');
 			processor = 2; sd += ' SD'
