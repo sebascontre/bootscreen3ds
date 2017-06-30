@@ -13,30 +13,31 @@ if (window.location.protocol == 'file:' && window.navigator.vendor == "Google In
 The font has a letter spacing of 2px, and the generator needs a spacing of 1px.
 This function allows to write character by character with only 1px of spacing. */
 var write = function(x, y, text, color = 'gray') {
-	var letter = text.substr(0,1);
+	while (text != '') {
+		var letter = text.substr(0,1);
 	
-	/* Search for specials characters */
-	if (letter == '_') {
-		text = text.substr(1);
-		letter = text.substr(0,1);
-		if (color == 'gray') color = 'white';
-		else if (color == 'white') color = 'gray';
-	}
+		/* Search for specials characters */
+		if (letter == '_') {
+			text = text.substr(1);
+			letter = text.substr(0,1);
+			if (color == 'gray') color = 'white';
+			else if (color == 'white') color = 'gray';
+		}
 
-	/* Draw 1 character */
-	$('#topscreen').drawText({
-		fillStyle: color,
-		x: x+2, y: y,
-		fontSize: 16,
-		fontFamily: 'PerfectDOSVGA437Win',
-		align: 'left',
-		text: letter
-	});
+		/* Draw 1 character */
+		$('#topscreen').drawText({
+			fillStyle: color,
+			x: x+2, y: y,
+			fontSize: 16,
+			fontFamily: 'PerfectDOSVGA437Win',
+			align: 'left',
+			text: letter
+		});
 	
-	/* Remove the character writed from the string, and if itn't empty, continue recursive */
-	text = text.substr(1);
-	if (text != '')
-		write(x+8, y, text, color);
+		/* Remove the character writed from the string, and if itn't empty, continue recursive */
+		text = text.substr(1);
+		x = x + 8;
+	}
 }
 
 /* This draw the entire splash screen with any change on the form */
