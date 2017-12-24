@@ -155,7 +155,7 @@ $("#settings input, #settings select").on('change', function() {
 				write(0, 16*5, 'New Nintendo 2DS LL JAN-001('+region+')');
 			else
 				write(0, 16*5, 'New Nintendo 2DS XL JAN-001('+region+')');
-			processor = 4; sd += ' SD'
+			processor = 4; sd += ' microSD'
 			break;
 		case 'n3DS':
 			write(0, 16*5, 'New Nintendo 3DS KTR-001('+region+')');
