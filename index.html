@@ -1,85 +1,93 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Old School PC BIOS - Splash Bootscreen Generator</title>
-	
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:100,300,400,500,600|Material+Icons" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
-	<link rel="stylesheet" href="webfont/PerfectDOSVGA437Win.css">
-	<link rel="stylesheet" href="styles.css">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
-	<meta property="og:title" content="Old School PC BIOS" />
-	<meta property="og:description" content="Splash Bootscreen Generator for 3DS CFW" /> 
-	<meta property="og:image" content="https://www.gravatar.com/avatar/8d74b30f162502dcf45623e721b2bd20.png?s=600" />
-	<meta property="og:url" content="https://sebascontre.github.io/bootscreen3ds/" />
-	
-	<!--[if lt IE 9]>
+<head>
+    <title>Old School PC BIOS - Splash Bootscreen Generator</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Roboto:100,300,400,500,600|Material+Icons" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
+    <link rel="stylesheet" href="webfont/PerfectDOSVGA437Win.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="Old School PC BIOS" />
+    <meta property="og:description" content="Splash Bootscreen Generator for 3DS CFW" />
+    <meta property="og:image" content="https://www.gravatar.com/avatar/8d74b30f162502dcf45623e721b2bd20.png?s=600" />
+    <meta property="og:url" content="https://sebascontre.github.io/bootscreen3ds/" />
+
+    <!--[if lt IE 9]>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 	<![endif]-->
 </head>
+
 <body>
-	<a href="https://github.com/sebascontre/bootscreen3ds">
+    <a href="https://github.com/sebascontre/bootscreen3ds">
 		<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png">
 	</a>
-	
-	<div class="container">
-		<h1>Old School PC BIOS</h1>
-		<p id="subtitle">Splash Bootscreen Generator <small>v6.0</small></p>
-		
-		
-		
-		
-		<p id="credit">made with &#10084; by
-			<a href="https://twitter.com/sebascontre" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="idea and coding">@sebascontre</a> +
-			<a href="https://twitter.com/yopalonso" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="3DS pixel art">@yopalonso</a></p>
 
-		<div id="offline_warning" class="alert alert-warning" style="display: none";><strong>Warning!</strong> The Downloads and MenuxHax methods don't work locally on Google Chrome and similar browsers, if it's your case, please use the <a href="https://sebascontre.github.io/bootscreen3ds/">online version</a> instead.</div>
-		
-		<form id="settings">
-			<div class="row">
-				<fieldset id="consoles" class="form-check">
-					<legend class="col-form-legend">Nintendo 3DS Model</legend>
-					<label class="form-check-label col s4 m2">
+    <div class="container">
+        <h1>Old School PC BIOS</h1>
+        <p id="subtitle">Splash Bootscreen Generator <small>v6.1</small></p>
+
+
+
+
+        <p id="credit">made with &#10084; by
+            <a href="https://twitter.com/sebascontre" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="idea and coding">@sebascontre</a> +
+            <a href="https://twitter.com/yopalonso" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="3DS pixel art">@yopalonso</a>
+            <br> Switch-Support by
+            <a href="https://github.com/RealDekkia" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Switch-Related stuff">@RealDekkia</a></p>
+
+        <div id="offline_warning" class="alert alert-warning" style="display: none" ;><strong>Warning!</strong> The Downloads and MenuxHax methods don't work locally on Google Chrome and similar browsers, if it's your case, please use the <a href="https://sebascontre.github.io/bootscreen3ds/">online version</a> instead.</div>
+
+        <form id="settings">
+            <div class="row">
+                <fieldset id="consoles" class="form-check">
+                    <legend class="col-form-legend">Nintendo-Console Model</legend>
+                    <label class="form-check-label col s4 m3">
 						<input type="radio" name="model" value="3DS" checked>
 						<img class="console" src="images/3DS.png" />
 					</label>
-					<label class="form-check-label col s4 m2">
+                    <label class="form-check-label col s4 m3">
 						<input type="radio" name="model" value="3DSXL">
 						<img class="console" src="images/3DSXL.png" />
 					</label>
-						<label class="form-check-label col s4 m2">
+                    <label class="form-check-label col s4 m3">
 						<input type="radio" name="model" value="n3DS">
 						<img class="console" src="images/n3DS.png" />
 					</label>
-					<label class="form-check-label col s4 m2">
+                    <label class="form-check-label col s4 m3">
 						<input type="radio" name="model" value="n3DSXL">
 						<img class="console" src="images/n3DSXL.png" />
 					</label>
-					<label class="form-check-label col s4 m2">
+                    <label class="form-check-label col s4 m4">
 						<input type="radio" name="model" value="2DS">
 						<img class="console" src="images/2DS.png" />
 					</label>
-					<label class="form-check-label col s4 m2">
+                    <label class="form-check-label col s4 m4">
 						<input type="radio" name="model" value="n2DSXL">
 						<img class="console" src="images/n2DSXL.png" />
 					</label>
-				</fieldset>
-			</div>
-			<div class="row">
-				<fieldset id="options">
-					<legend >Options</legend>
-					<div class="input-field col s6 m2">
-						<select name="region">
+                    <label class="form-check-label col s4 m4">
+						<input type="radio" name="model" value="neonSwitch">
+						<img class="console" src="images/NX.png" />
+					</label>
+                </fieldset>
+            </div>
+            <div class="row">
+                <fieldset id="options">
+                    <legend>Options</legend>
+                    <div class="input-field col s6 m2">
+                        <select name="region">
 							<option value="USA" selected="selected">USA</option>
 							<option value="EUR">EUR</option>
 							<option value="JPN">JPN</option>
 						</select>
-						<label>Region</label>
-					</div>
-					<div class="input-field col s6 m2">
-						<select name="sd" class="form-control">
+                        <label>Region</label>
+                    </div>
+                    <div class="input-field col s6 m2">
+                        <select name="sd" class="form-control">
 							<option value="No">None</option>
 							<option value="2G">2GB</option>
 							<option value="4G" selected="selected">4GB</option>
@@ -90,11 +98,13 @@
 							<option value="128G">128GB</option>
 							<option value="200G">200GB</option>
 							<option value="256G">256GB</option>
+                            <option value="512G">512GB</option>
+                            <option value="1024G">1024GB</option>
 						</select>
-						<label>SD Card</label>
-					</div>
-					<div class="input-field col s12 m4">
-						<select name="type" class="form-control">
+                        <label>SD Card</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <select name="type" class="form-control">
 							<option value="luma2017">Luma3DS</option>
 							<option value="luma2017">Luma3DS hourly</option>
 							<option value="luma2018" selected="selected">Luma3DS v9.1</option>
@@ -126,28 +136,38 @@
 							<option value="menuhax2016">Menuhax v3.0</option>
 							<option value="menuhax2016">Menuhax v2.2</option>
 							<option value="menuhax2015">Menuhax v2.1</option>
+                            
+                            <option value="reiNX2018">ReiNX</option>
+                            <option value="atmosphereNX2018">Atmosphère</option>
+                            <option value="lakkaNX2018">Lakka</option>
+                            <option value="sxOSNX2018">SX OS</option>
 						</select>
-						<label>Type</label>
-					</div>
-					<div class="input-field col s12 m4">
-						<select name="logoOptions" class="form-control form-control-sm">
+                        <label>Type</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <select name="logoOptions" class="form-control form-control-sm">
 							<option value="noLogo">No Logo</option>
 							<option value="energyStar" selected="selected">Energy Star Logo</option>
 							<option value="energyLuma">Energy Luma Logo</option>
 							<option value="lumaIcon">Luma Icon</option>
+                            
+                            <option value="reiNxLogo">reiNX Icon</option>
+                            <option value="atmosphereNxLogo">Atmosphère Icon</option>
+                            <option value="lakkaNxLogo">Lakka Icon</option>
+                            <option value="xsOsLogo">SX OS Icon</option>
 						</select>
-						<label>Side Logo</label>
-					</div>
-				</fieldset>
-			</div>
-			<div class="row">
-				<fieldset id="otheroptions">
-					<legend>Other Options</legend>
-					<p>
-						<input type="checkbox" class="filled-in" id="hold" name="hold" checked="checked" />
-						<label for="hold"></label>
-							<span><strong>Hold</strong></span>
-							<span class="input-field inline">
+                        <label>Side Logo</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row">
+                <fieldset id="otheroptions">
+                    <legend>Other Options</legend>
+                    <p>
+                        <input type="checkbox" class="filled-in" id="hold" name="hold" checked="checked" />
+                        <label for="hold"></label>
+                        <span><strong>Hold</strong></span>
+                        <span class="input-field inline">
 								<select name="onboot" class="form-control form-control-sm">
 									<option value="L">L</option>
 									<option value="R">R</option>
@@ -164,13 +184,13 @@
 									<option value="HOME">HOME</option>
 								</select>
 							</span>
-							<span class="input-field inline">
+                        <span class="input-field inline">
 								<select name="firstTime" class="form-control form-control-sm">
 									<option value="now">now</option>
 									<option value="boot" selected="selected">on boot</option>
 								</select>
 							</span> <span>to enter</span>
-							<span class="input-field inline">
+                        <span class="input-field inline">
 								<input type="text" name="boottool" val="." style="display: none;" class="form-control form-control-sm" />
 								<select name="boottool" class="form-control form-control-sm">
 									<option value="lumasettings" selected="selected">Configuration Menu</option>
@@ -182,13 +202,13 @@
 									<option value="custom"><em>Custom</em></option>
 								</select>
 							</span>
-						</label>
-					</p>
-					<p>
-						<input type="checkbox" class="filled-in" id="secondLine" name="secondLine" checked="checked" />
-						<label for="secondLine"></label>
-						<span><strong>Hold</strong></span>
-						<span class="input-field inline">
+                        </label>
+                    </p>
+                    <p>
+                        <input type="checkbox" class="filled-in" id="secondLine" name="secondLine" checked="checked" />
+                        <label for="secondLine"></label>
+                        <span><strong>Hold</strong></span>
+                        <span class="input-field inline">
 							<select name="secondButton" class="form-control form-control-sm select-inline">
 								<option value="L">L</option>
 								<option value="R">R</option>
@@ -205,13 +225,13 @@
 								<option value="HOME">HOME</option>
 							</select>
 						</span>
-						<span class="input-field inline"><select name="secondTime" class="form-control form-control-sm">
+                        <span class="input-field inline"><select name="secondTime" class="form-control form-control-sm">
 								<option value="now">now</option>
 								<option value="boot" selected="selected">on boot</option>
 							</select>
 						</span>
-						<span>to enter</span>
-						<span class="input-field inline">
+                        <span>to enter</span>
+                        <span class="input-field inline">
 							<input type="text" name="secondTool" val="." style="display: none;" class="form-control form-control-sm" />
 							<select name="secondTool" class="form-control form-control-sm">
 								<option value="rxtools">Rxtools settings</option>
@@ -226,32 +246,32 @@
 								<option value="custom"><em>Custom</em></option>
 							</select>
 						</span>
-					</p>
-				</fieldset>
-			</div>
-		</form>
-	
-		<center><canvas width="400" height="240" id="topscreen"></canvas></center>
-		<center>
-			<a id="downloadPNG" class="btn btn-primary disabled" href="#png" role="button">Download PNG</a>
-			<a id="downloadBIN" class="btn btn-primary disabled" href="#bin" role="button">Download BIN</a>
-		</center>
-	</div>
+                    </p>
+                </fieldset>
+            </div>
+        </form>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.7.3/jcanvas.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.7/download.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-	<script src="scripts.js"></script>
-	<script type="text/javascript">
-$(document).ready(function() {
-    $('select').material_select();
-  });
-            
-	</script>
+        <center><canvas width="400" height="240" id="topscreen"></canvas></center>
+        <center>
+            <a id="downloadPNG" class="btn btn-primary disabled" href="#png" role="button">Download PNG</a>
+            <a id="downloadBIN" class="btn btn-primary disabled" href="#bin" role="button">Download BIN</a>
+        </center>
+    </div>
 
-	<center><br/>
-		Donations: <a href="https://www.paypal.me/sebascontre">Paypal.me</a> - <a href="https://ko-fi.com/sebascontre">Ko-fi.com</a>
-	</center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/16.7.3/jcanvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.7/download.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="scripts.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('select').material_select();
+        });
+
+    </script>
+
+    <center><br/> Donations: <a href="https://www.paypal.me/sebascontre">Paypal.me</a> - <a href="https://ko-fi.com/sebascontre">Ko-fi.com</a>
+    </center>
 </body>
+
 </html>
