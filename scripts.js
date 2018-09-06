@@ -5,6 +5,7 @@ $.jCanvas.defaults.fromCenter = false;
 This is a limitation of Google Chrome’s sandboxing architecture, and therefore cannot be fixed */ 
 if (window.location.protocol == 'file:' && window.navigator.vendor == "Google Inc.") {
 	$('#offline_warning').show();
+	$('#offline_download').show();
 	$('select[name=type] option[value=menuhax2015]', "#settings").prop('disabled', true);
 	$('select[name=type] option[value=menuhax2016]', "#settings").prop('disabled', true);
 }
