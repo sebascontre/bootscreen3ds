@@ -108,11 +108,10 @@ var resizeImage = function (device) {
         sy: imgSY
     });
 
-    console.log($('#topscreen'));
+    //console.log($('#topscreen'));
 };
 
-/* This draw the entire splash screen with any change on the form */
-$("#settings input, #settings select").on('change', function () {
+function redraw() {
     var $topscreen = $('#topscreen');
 
     var model = $('input[name=model]:checked', "#settings").val();
@@ -329,7 +328,14 @@ $("#settings input, #settings select").on('change', function () {
             break;
     }
 
-    write(0, curDimensions.lh * 9, 'Detecting Primary Master ... ' + processor / 2 + 'G Internal Memory');
+    var nandSize = document.getElementById("nandSize").value;
+    if (nandSize && nandSize > 0) {
+        write(0, curDimensions.lh * 9, 'Detecting Primary Master ... ' + nandSize + 'G Internal Memory');
+    } else {
+        write(0, curDimensions.lh * 9, 'Detecting Primary Master ... ' + processor / 2 + 'G Internal Memory');
+    }
+
+
     write(0, curDimensions.lh * 10, 'Detecting Primary Slave  ... ' + sd + ' Card');
 
     if (!use_bootinput)
@@ -371,6 +377,11 @@ $("#settings input, #settings select").on('change', function () {
         });
     }
 
+}
+
+/* This draw the entire splash screen with any change on the form */
+$("#settings input, #settings select").on('change', function () {
+    redraw();
 });
 
 window.onload = function () {
