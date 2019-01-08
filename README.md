@@ -3,7 +3,7 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 ## How do I use this?
 
-1. Load the [website](https://sebascontre.github.io/bootscreen3ds/).
+1. Load the [website](https://realdekkia.github.io/bootscreen3ds/).
 
 2. Use the options to tweak the screen to your liking.
 
