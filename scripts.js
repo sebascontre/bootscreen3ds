@@ -212,11 +212,11 @@ function redraw() {
             break;
         case 'atmosphereNX2018':
             write(0, curDimensions.lh * 12, 'Booting Horizon OS...');
-            line2 = 'Copyright(C) 2018, Team Reswitched';
+            line2 = 'Copyright(C) 2019, SciresM, TuxSH, hexkyz, and fincs';
             break;
         case 'lakkaNX2018':
             write(0, curDimensions.lh * 12, 'Booting GNU/Linux...');
-            line2 = 'Copyright(C) 2018, Natinusala + libretro';
+            line2 = 'Copyright(C) 2018, Natinusala and libretro';
             break;
         case 'sxOSNX2018':
             write(0, curDimensions.lh * 12, 'Booting Horizon OS...');
