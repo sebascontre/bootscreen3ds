@@ -77,6 +77,10 @@ $("#settings input, #settings select").on('change', function() {
 			$topscreen.attr('width', 400);
 			line2 = 'Copyright(C) 2018, AuroraWright';
 			break;
+		case 'luma2019':
+			$topscreen.attr('width', 400);
+			line2 = 'Copyright(C) 2019, AuroraWright';
+			break;
 		case 'menuhax2015':
 			$topscreen.attr('width', 800);
 			line2 = 'Copyright(C) 2015, yellow8';
