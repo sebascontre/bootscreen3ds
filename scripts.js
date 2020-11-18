@@ -5,6 +5,7 @@ $.jCanvas.defaults.fromCenter = false;
 This is a limitation of Google Chrome’s sandboxing architecture, and therefore cannot be fixed */ 
 if (window.location.protocol == 'file:' && window.navigator.vendor == "Google Inc.") {
 	$('#offline_warning').show();
+	$('#offline_download').show();
 	$('select[name=type] option[value=menuhax2015]', "#settings").prop('disabled', true);
 	$('select[name=type] option[value=menuhax2016]', "#settings").prop('disabled', true);
 }
@@ -50,7 +51,7 @@ $("#settings input, #settings select").on('change', function() {
 	var type = $('select[name=type] option:selected', "#settings").val();
 	
 	var line1 = $('select[name=type] option:selected', "#settings").text();
-	var line2 = ''; var processor = 0; var use_bootinput = false; var use_auxinput = false;
+	var line2 = ''; var processor = 0; var use_bootinput = false; var use_auxinput = false; var use_addinput = false; var use_extinput = false;
 
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
 		$('input[name=boottool]', "#settings").show();
@@ -62,6 +63,18 @@ $("#settings input, #settings select").on('change', function() {
 		$('input[name=secondTool]', "#settings").show();
 		$('select[name=secondTool]', "#settings").parent().hide();
 		use_auxinput = true;
+	}
+	
+	if ($('select[name=thirdTool] option:selected', "#settings").val() == 'custom') {
+		$('input[name=thirdTool]', "#settings").show();
+		$('select[name=thirdTool]', "#settings").parent().hide();
+		use_addinput = true;
+	}
+	
+	if ($('select[name=fourTool] option:selected', "#settings").val() == 'custom') {
+		$('input[name=fourTool]', "#settings").show();
+		$('select[name=fourTool]', "#settings").parent().hide();
+		use_extinput = true;
 	}
 
 	switch(type) {
@@ -202,6 +215,12 @@ $("#settings input, #settings select").on('change', function() {
 	if (!use_auxinput)
 		$('input[name=secondTool]', "#settings").val($('select[name=secondTool] option:selected', "#settings").text());
 	
+	if (!use_addinput)
+		$('input[name=thirdTool]', "#settings").val($('select[name=thirdTool] option:selected', "#settings").text());
+	
+	if (!use_extinput)
+		$('input[name=fourTool]', "#settings").val($('select[name=fourTool] option:selected', "#settings").text());
+	
 	var boot_bool = $('input[name=hold]', "#settings").is(':checked');
 	var boot_keys = $('select[name=onboot] option:selected', "#settings").val();
 	var boot_tool = $('input[name=boottool]', "#settings").val();
@@ -212,13 +231,43 @@ $("#settings input, #settings select").on('change', function() {
 	var aux_tool = $('input[name=secondTool]').val();
 	var aux_text = '_Hold ' + aux_keys + ' '+ $('select[name=secondTime] option:selected').text() +'_ to enter _' + aux_tool + '_.';
 	
-	if (boot_bool && !aux_bool)
+	var add_bool = $('input[name=thirdLine]', "#settings").is(':checked');
+	var add_keys = $('select[name=thirdButton] option:selected').val();
+	var add_tool = $('input[name=thirdTool]').val();
+	var add_text = '_Hold ' + add_keys + ' '+ $('select[name=thirdTime] option:selected').text() +'_ to enter _' + add_tool + '_.';
+	
+	var ext_bool = $('input[name=fourLine]', "#settings").is(':checked');
+	var ext_keys = $('select[name=fourButton] option:selected').val();
+	var ext_tool = $('input[name=fourTool]').val();
+	var ext_text = '_Hold ' + ext_keys + ' '+ $('select[name=fourTime] option:selected').text() +'_ to enter _' + ext_tool + '_.';
+	
+	if (boot_bool && !aux_bool && !add_bool && !ext_bool)
 		write(0, 16*14, boot_text);
-	else if (boot_bool)
+	else if (boot_bool && aux_bool && add_bool && ext_bool)
+		write(0, 16*11, boot_text);
+	else if (boot_bool && aux_bool && (add_bool || ext_bool))
+		write(0, 16*12, boot_text);
+	else if (boot_bool && add_bool && (aux_bool || ext_bool))
+		write(0, 16*12, boot_text);
+	else if (boot_bool && ext_bool && (aux_bool || add_bool))
+		write(0, 16*12, boot_text);
+	else if (boot_bool && (aux_bool || add_bool || ext_bool))
 		write(0, 16*13, boot_text);
 	
-	if (aux_bool)
+	if (aux_bool && !add_bool && !ext_bool)
 		write(0, 16*14, aux_text);
+	else if (aux_bool && add_bool && ext_bool)
+		write(0, 16*12, aux_text);
+	else if (aux_bool && (add_bool || ext_bool))
+		write(0, 16*13, aux_text);
+	
+	if (add_bool && !ext_bool)
+		write(0, 16*14, add_text);
+	else if (add_bool)
+		write(0, 16*13, add_text);
+	
+	if (ext_bool)
+		write(0, 16*14, ext_text);
 
 	if ($topscreen.width() == 800) {
 		$topscreen.drawImage({
@@ -245,7 +294,8 @@ window.onload = function() {
 
 $('input[name=boottool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 $('input[name=auxtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
-
+$('input[name=addtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
+$('input[name=exttool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 
 /* Create a PNG downloadable of the canvas */
 /* global download */

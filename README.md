@@ -26,6 +26,11 @@ Old School BIOS Generator for MenuHax Nintendo 3DS
 
 ## Changelog
 
+**Version 6.0.1**
+
+* Added two more options to the ``Other Options`` panel
+* Changes to offline messages
+
 **Version 6.0**
 
 * Add New 2DS XL/LL support
