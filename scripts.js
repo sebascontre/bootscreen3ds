@@ -43,6 +43,7 @@ var write = function(x, y, text, color = 'gray') {
 /* This draw the entire splash screen with any change on the form */
 $("#settings input, #settings select").on('change', function() {
 	var $topscreen = $('#topscreen');
+	$topscreen.imageSmoothingEnabled = false;
 	
 	var model = $('input[name=model]:checked', "#settings").val();
 	var region = $('select[name=region] option:selected', "#settings").val();
