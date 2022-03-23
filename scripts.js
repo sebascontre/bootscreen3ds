@@ -27,7 +27,7 @@ var write = function(x, y, text, color = 'gray') {
 		/* Draw 1 character */
 		$('#topscreen').drawText({
 			fillStyle: color,
-			x: x+2, y: y,
+			x: x+2.5, y: y+0.5,
 			fontSize: 16,
 			fontFamily: 'PerfectDOSVGA437Win',
 			align: 'left',
