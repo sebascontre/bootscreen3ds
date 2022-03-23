@@ -4,6 +4,10 @@
     }
 }
 
+img, canvas {
+    image-rendering: pixelated;
+}
+
 #consoles label {
     text-align: center;
 }
