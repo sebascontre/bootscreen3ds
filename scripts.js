@@ -50,7 +50,8 @@ $("#settings input, #settings select").on('change', function() {
 	var type = $('select[name=type] option:selected', "#settings").val();
 	
 	var line1 = $('select[name=type] option:selected', "#settings").text();
-	var line2 = ''; var processor = 0; var use_bootinput = false; var use_auxinput = false;
+	var line2 = $('select[name=copyOptions] option:selected', "#settings").text();
+	var processor = 0; var use_bootinput = false; var use_auxinput = false;
 
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
 		$('input[name=boottool]', "#settings").show();
@@ -67,27 +68,27 @@ $("#settings input, #settings select").on('change', function() {
 	switch(type) {
 		case 'luma2016':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2016, AuroraWright';
+			line2 = 'Copyright(C) 2016, ' + line2;
 			break;
 		case 'luma2017':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2017, AuroraWright';
+			line2 = 'Copyright(C) 2017, ' + line2;
 			break;
 		case 'luma2018':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2018, AuroraWright';
+			line2 = 'Copyright(C) 2018, ' + line2;
 			break;
 		case 'luma2019':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2019, AuroraWright';
+			line2 = 'Copyright(C) 2019, ' + line2;
 			break;
 		case 'luma2020':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2020, AuroraWright';
+			line2 = 'Copyright(C) 2020, ' + line2;
 			break;
 		case 'luma2022':
 			$topscreen.attr('width', 400);
-			line2 = 'Copyright(C) 2022, AuroraWright';
+			line2 = 'Copyright(C) 2022, ' + line2;
 			break;
 		case 'menuhax2015':
 			$topscreen.attr('width', 800);
