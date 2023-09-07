@@ -7,6 +7,7 @@ if (window.location.protocol == 'file:' && window.navigator.vendor == "Google In
 	$('#offline_warning').show();
 	$('select[name=type] option[value=menuhax2015]', "#settings").prop('disabled', true);
 	$('select[name=type] option[value=menuhax2016]', "#settings").prop('disabled', true);
+	$('select[name=type] option[value=menuhax2017]', "#settings").prop('disabled', true);
 }
 
 /* jCanvas has an option for write full strings but don't have a option for control letter spacing.
@@ -103,6 +104,10 @@ $("#settings input, #settings select").on('change', function() {
 		case 'menuhax2016':
 			$topscreen.attr('width', 800);
 			line2 = 'Copyright(C) 2016, yellow8';
+			break;
+		case 'menuhax2017':
+			$topscreen.attr('width', 800);
+			line2 = 'Copyright(C) 2017, yellow8';
 			break;
 	}
 
