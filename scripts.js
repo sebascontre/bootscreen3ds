@@ -51,8 +51,12 @@ $("#settings input, #settings select").on('change', function() {
 	var sd = $('select[name=sd] option:selected', "#settings").val();
 	var type = $('select[name=type] option:selected', "#settings").val();
 	
-	var line1 = $('select[name=type] option:selected', "#settings").text();
-	var line2 = $('select[name=copyOptions] option:selected', "#settings").text();
+	var line1 = $('select[name=type]', "#settings").val() == 'custom'
+	    ? $('input[name=type]', "#settings").val()
+	    : $('select[name=type] option:selected', "#settings").text();
+	var line2 = $('select[name=copyOptions]', "#settings").val() == 'custom'
+	    ? $('input[name=copyOptions]', "#settings").val()
+	    : $('select[name=copyOptions] option:selected', "#settings").text();
 	var processor = 0; var use_bootinput = false; var use_auxinput = false;
 
 	if ($('select[name=boottool] option:selected', "#settings").val() == 'custom') {
@@ -64,6 +68,18 @@ $("#settings input, #settings select").on('change', function() {
 	if ($('select[name=secondTool] option:selected', "#settings").val() == 'custom') {
 		$('input[name=secondTool]', "#settings").show();
 		$('select[name=secondTool]', "#settings").parent().hide();
+		use_auxinput = true;
+	}
+
+	if ($('select[name=type] option:selected', "#settings").val() == 'custom') {
+		$('input[name=type]', "#settings").show();
+		$('select[name=type]', "#settings").parent().hide();
+		use_auxinput = true;
+	}
+
+	if ($('select[name=copyOptions] option:selected', "#settings").val() == 'custom') {
+		$('input[name=copyOptions]', "#settings").show();
+		$('select[name=copyOptions]', "#settings").parent().hide();
 		use_auxinput = true;
 	}
 
@@ -222,30 +238,43 @@ $("#settings input, #settings select").on('change', function() {
 
 	write(0, 16*9,  'Detecting Primary Master ... '+ processor/2 +'G Internal Memory');
 	write(0, 16*10, 'Detecting Primary Slave  ... '+ sd +' Card');
-	
-	if (!use_bootinput)
-		$('input[name=boottool]', "#settings").val($('select[name=boottool] option:selected', "#settings").text());
-		
-	if (!use_auxinput)
-		$('input[name=secondTool]', "#settings").val($('select[name=secondTool] option:selected', "#settings").text());
-	
-	var boot_bool = $('input[name=hold]', "#settings").is(':checked');
-	var boot_keys = $('select[name=onboot] option:selected', "#settings").val();
-	var boot_tool = $('input[name=boottool]', "#settings").val();
-	var boot_text = '_Hold ' + boot_keys + ' '+ $('select[name=firstTime] option:selected').text() +'_ to enter _' + boot_tool + '_.';
 
-	var aux_bool = $('input[name=secondLine]', "#settings").is(':checked');
-	var aux_keys = $('select[name=secondButton] option:selected').val();
-	var aux_tool = $('input[name=secondTool]').val();
-	var aux_text = '_Hold ' + aux_keys + ' '+ $('select[name=secondTime] option:selected').text() +'_ to enter _' + aux_tool + '_.';
+	// See if custom bottom text is enabled
+	var custom_bottom_bool = $('input[name=customBottom]', "#settings").is(':checked');
+
+	if (!custom_bottom_bool) {
+		// If custom bottom text is disabled
+		
+		if (!use_bootinput)
+			$('input[name=boottool]', "#settings").val($('select[name=boottool] option:selected', "#settings").text());
+			
+		if (!use_auxinput)
+			$('input[name=secondTool]', "#settings").val($('select[name=secondTool] option:selected', "#settings").text());
+		
+		var boot_bool = $('input[name=hold]', "#settings").is(':checked');
+		var boot_keys = $('select[name=onboot] option:selected', "#settings").val();
+		var boot_tool = $('input[name=boottool]', "#settings").val();
+		var boot_text = '_Hold ' + boot_keys + ' '+ $('select[name=firstTime] option:selected').text() +'_ to enter _' + boot_tool + '_.';
 	
-	if (boot_bool && !aux_bool)
+		var aux_bool = $('input[name=secondLine]', "#settings").is(':checked');
+		var aux_keys = $('select[name=secondButton] option:selected').val();
+		var aux_tool = $('input[name=secondTool]').val();
+		var aux_text = '_Hold ' + aux_keys + ' '+ $('select[name=secondTime] option:selected').text() +'_ to enter _' + aux_tool + '_.';
+		
+		if (boot_bool && !aux_bool)
+			write(0, 16*14, boot_text);
+		else if (boot_bool)
+			write(0, 16*13, boot_text);
+		
+		if (aux_bool)
+			write(0, 16*14, aux_text);
+	
+	} else {
+		// If custom bottom text is enabled
+
+		var boot_text = $('input[name=customBottomText]').val(); // This is what the user types in
 		write(0, 16*14, boot_text);
-	else if (boot_bool)
-		write(0, 16*13, boot_text);
-	
-	if (aux_bool)
-		write(0, 16*14, aux_text);
+	}
 
 	if ($topscreen.width() == 800) {
 		$topscreen.drawImage({
@@ -272,6 +301,8 @@ window.onload = function() {
 
 $('input[name=boottool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 $('input[name=auxtool]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
+$('input[name=type]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
+$('input[name=copyOptions]', "#settings").keyup(function() { $("#settings input").trigger('change'); });
 
 
 /* Create a PNG downloadable of the canvas */

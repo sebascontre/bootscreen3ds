@@ -100,10 +100,12 @@
 							<option value="512G">512GB</option>
 							<option value="1024G">1024GB</option>
 							<option value="1T">1TB</option>
+							<option value="2T">2TB</option>
 						</select>
 						<label>SD Card</label>
 					</div>
 					<div class="input-field col s12 m3">
+						<input type="text" name="type" val="." style="display: none;" class="form-control form-control-sm" />
 						<select name="type" class="form-control">
 							<option value="luma2026">Luma3DS</option>
 							<option value="luma2026">Luma3DS hourly</option>
@@ -166,14 +168,17 @@
 							<option value="menuhax2016">Menuhax v3.0</option>
 							<option value="menuhax2016">Menuhax v2.2</option>
 							<option value="menuhax2015">Menuhax v2.1</option>
+							<option value="custom"><em>Custom</em></option>
 						</select>
 						<label>Type</label>
 					</div>
 					<div class="input-field col s12 m2">
+						<input type="text" name="copyOptions" val="." style="display: none;" class="form-control form-control-sm" />
 						<select name="copyOptions" class="form-control form-control-sm">
 							<option value="aurora">AuroraWright</option>
 							<option value="tux">TuxSH</option>
 							<option value="lumaTeam" selected="selected">LumaTeam</option>
+							<option value="custom"><em>Custom</em></option>
 						</select>
 						<label>Copyright Luma3DS</label>
 					</div>
@@ -277,6 +282,20 @@
 					</p>
 				</fieldset>
 			</div>
+			<div class="row">
+				<fieldset id="custom-bottom-input">
+					<legend>Custom Bottom-Line Text</legend>
+					<p>
+						<input type="checkbox" class="filled-in" id="customBottom" name="customBottom" />
+						<label for="customBottom"></label>
+
+						<span class="input-field inline">
+							<input type="text" name="customBottomText" val="." class="form-control form-control-sm" style="width: 300%;" />
+						</span>
+					</p>
+					<p>Custom text is grey by default. Put text inside underscores _like this_ to make it white.</p>
+				</fieldset>
+			</div>
 		</form>
 	
 		<center><canvas width="400" height="240" id="topscreen"></canvas></center>
@@ -292,10 +311,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 	<script src="scripts.js"></script>
 	<script type="text/javascript">
-$(document).ready(function() {
-    $('select').material_select();
-  });
-            
+		$(document).ready(function() {
+		    $('select').material_select();
+		  });
+        
 	</script>
 
 	<center><br/>
